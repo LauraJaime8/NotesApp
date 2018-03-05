@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.nav {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: #105B63;
+
+  .nav-elements {
+    display: flex;
+    color: #FFFAD5;
+    list-style: none;
+
+    li {
+      padding-right: 20px;
+      a{
+        color: #FFFAD5;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .logo {
+    padding-left: 20px;
+    color: #FFFAD5;
+  }
+}
