@@ -1,0 +1,27 @@
+Started GET "/" for 127.0.0.1 at 2018-03-05 18:37:32 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.3.0/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.3.0/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 367ms (Views: 17.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-05 18:46:14 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2018-03-05 18:47:05 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 622ms (Views: 618.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-05 18:47:51 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 78ms (Views: 65.3ms)
+
+
