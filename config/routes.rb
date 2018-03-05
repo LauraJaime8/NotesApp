@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
+
+  resources :notes
+=begin
+    get "/notes"
+    post "/notes"
+    delete "/notes"
+    get "/notes/:id"
+    get "/notes/new"
+    get "/notes/:id/edit"
+    patch "/notes/:id"
+    put "/notes/:id"
+=end
   root :to => "welcome#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
