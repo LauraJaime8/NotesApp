@@ -3,14 +3,14 @@ Rails.application.routes.draw do
 
   resources :notes
 =begin
-    get "/notes"
-    post "/notes"
-    delete "/notes"
-    get "/notes/:id"
-    get "/notes/new"
-    get "/notes/:id/edit"
-    patch "/notes/:id"
-    put "/notes/:id"
+    get "/notes" index
+    post "/notes" create
+    delete "/notes" delete
+    get "/notes/:id" show
+    get "/notes/new" new
+    get "/notes/:id/edit" edit
+    patch "/notes/:id" update
+    put "/notes/:id" update
 =end
   root :to => "welcome#index"
 
