@@ -1,6 +1,6 @@
 <% @notes.each do |notes| %>
   <h1><%= notes.title %></h1>
   <div>
-    <%= notes.content %>
+    <%= notes.content %> - <%= link_to "Eliminar", notes, method: :delete %>
   </div>
 <%end%>
