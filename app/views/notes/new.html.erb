@@ -1,4 +1,9 @@
 <%= form_for(@note) do |f| %>
+  <% @note.errors.full_messages.each do |message| %>
+    <div class="be-red white">
+      * <%= message %>
+    </div>
+  <%end%>
   <div class="field">
     <%= f.text_field :title, placeholder: "Título", class:"form-control" %>
   </div>

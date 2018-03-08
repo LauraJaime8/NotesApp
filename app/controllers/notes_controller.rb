@@ -18,7 +18,11 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(title: params[:note][:title],
                       content: params[:note][:content])
-    @note.save
-    redirect_to @note
+    if @note.save #Si las validaciones han pasado
+      redirect_to @note
+    else
+      render :new
+    end
+
   end
 end
