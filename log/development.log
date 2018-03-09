@@ -748,3 +748,328 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 308ms (Views: 276.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:09:35 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (106.3ms)
+Completed 401 Unauthorized in 328ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (C:/Users/Oliva/Documents/NotesApp/app/views/layouts/application.html.erb:37: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+C:/Users/Oliva/Documents/NotesApp/app/views/layouts/application.html.erb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:37: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:39: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:10:33 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (122.3ms)
+Completed 401 Unauthorized in 383ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (C:/Users/Oliva/Documents/NotesApp/app/views/layouts/application.html.erb:35: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+C:/Users/Oliva/Documents/NotesApp/app/views/layouts/application.html.erb:37: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:35: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:37: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:11:34 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 1290ms (Views: 1229.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-09 15:11:48 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eXvSAEvHmVDGXdm+Hfbnx2iJLEFKyAeggUBiuospXF/uFwyX/5UzK8OUVv4YjBbVZOEVeNGt6mDO18dzcYG/Aw==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "olivagalvez@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 922ms (Views: 442.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-09 15:11:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 401ms (Views: 398.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-09 15:11:58 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATDEObymSmZwrK+HWbA8nc7q7MEBlv9rWZgEx80rtQJvJQVFFfi0VfaQWJE0embqLaj82K0dl2PIqLZorybx/g==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "olivagalvez@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-03-09 14:11:58.904683"], ["sign_in_count", 2], ["updated_at", "2018-03-09 14:11:58.908730"], ["id", 1]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 530ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:11:59 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 725ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x000000000d19fcf0>:0x000000000d18f0d0>):
+    22:           <li>My profile</li>
+    23:           <% if user_signed_in? %>
+    24:           <li>
+    25:             <%= link_to "Cerrar Sesión", destroy_user_session_path, method: delete %>
+    26:           </li>
+    27:           <%end%>
+    28:         </ul>
+  
+app/views/layouts/application.html.erb:25:in `_app_views_layouts_application_html_erb__1632145261_109799580'
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:12:43 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1121ms (Views: 1072.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:12:54 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 32ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:12:54 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 244.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:13:01 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:13:01 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 233.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-09 15:13:13 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:13:13 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 231.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:13:18 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 283ms (Views: 246.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:14:17 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 985ms (Views: 945.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:14:23 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 33ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:14:23 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 339ms (Views: 314.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:16:38 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 102ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:16:40 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1438ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x000000000cfc1848>:0x000000000cfcb230>):
+    22:           <li>My profile</li>
+    23:           <% if user_signed_in? %>
+    24:           <li>
+    25:               <li><%= link_to "Close", destroy_user_session_path, method:delete %></li>
+    26:           </li>
+    27:           <%end%>
+    28:         </ul>
+  
+app/views/layouts/application.html.erb:25:in `_app_views_layouts_application_html_erb___1452106264_108995000'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:20:13 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 143ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:20:14 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1038ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 0..3)):
+    22:           <li>My profile</li>
+    23:           <% if user_signed_in? %>
+    24:           <li>
+    25:               <li><%= link_to "Close", destroy_user_session_path, @message, :confirm => 'Are you sure?', :method => :delete %></li>
+    26:           </li>
+    27:           <%end%>
+    28:         </ul>
+  
+app/views/layouts/application.html.erb:25:in `_app_views_layouts_application_html_erb___1589666464_109001520'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:21:28 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 112ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:21:29 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 835ms (Views: 802.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-03-09 15:21:32 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3mhuMBim6RZ/VzNNj+DVcvaL4dow3gBxxAmDahKKEMbYFD1Qb+AGjdECluLcSu3ugqhXEc+wCj7LRev8lXiz5Q=="}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:21:33 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 301ms (Views: 277.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 15:22:10 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (80.7ms)
+Completed 200 OK in 420ms (Views: 417.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-09 15:22:14 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 433ms (Views: 427.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-09 15:22:22 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"drPFl1dHQevdH92AUd16QqdrcxR+tP8r8mp81YZ7EgW/3QQhusWI2nesvL18gEuPOzus/W8RfuoiLYelWp0FxA==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "olivagalvez@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-03-09 14:22:22.409382"], ["last_sign_in_at", "2018-03-09 14:11:58.904683"], ["sign_in_count", 3], ["updated_at", "2018-03-09 14:22:22.413395"], ["id", 1]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 554ms (ActiveRecord: 27.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:22:22 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 266ms (Views: 240.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-03-09 15:22:25 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pPZvN0iNmoG0QiDcyEtPsXG/F4zCwvOT7LuMOqPaPO6GNM32rtAv3vnQokOSS5mKlNx1B6MvOPCg7gF8zsvcxw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 15:22:25 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 284ms (Views: 258.9ms | ActiveRecord: 0.0ms)
+
+
