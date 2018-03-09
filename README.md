@@ -1,24 +1,45 @@
-# README
+README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README document are necessary to get the application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+Installing From Git
 
-* System dependencies
+Prerequisites
 
-* Configuration
+Install these via your plataform´s preferred method.
 
-* Database creation
+* Git
+* Compiler
+* Ruby
+* Rails
+* RubyGems
+* Bundler
 
-* Database initialization
+Chef Installation
 
-* How to run the test suite
+Then get the source and install it:
 
-* Services (job queues, cache servers, search engines, etc.)
+#Clone this repo
+git clone https://github.com/LauraJaime8/NotesApp.git
 
-* Deployment instructions
+#cd into the source tree
+cd NotesApp
 
-* ...
+#Install dependencies with bundler
+bundle install
+
+How can we compile this proyect?
+
+#We should use the next command:
+rails s or rails server
+
+#In the our browser, we need put:
+Localhost:3000
+
+License
+
+#Authors:
+Laura Jaime Villamayor
+Oliva Gálvez García
+
