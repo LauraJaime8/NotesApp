@@ -47,3 +47,704 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 10889ms (Views: 10851.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-09 13:34:19 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10481ms (Views: 10445.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 14:00:03 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1009ms (Views: 974.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 14:00:16 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 284ms (Views: 257.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180309130411)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "name" varchar, "permission_level" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180309130411"]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/users/" for 127.0.0.1 at 2018-03-09 14:07:12 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 14:07:23 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (92.2ms)
+Completed 200 OK in 1103ms (Views: 1073.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 14:09:15 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (103.3ms)
+Completed 200 OK in 1096ms (Views: 1038.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:09:41 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl8GJqARPzN5GiQvcHoKa5hwrSseGvNGTAesLP+rfDaHkH3ggzL6ySHNw0GpOTYUrIVs7WsnvjkZpOa9IrKFzw==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/encryptor.rb:3:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:167:in `password_digest'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:47:in `password='
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.1.5) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.1.5) lib/active_record/core.rb:337:in `initialize'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+devise (4.4.1) lib/devise/models/registerable.rb:22:in `new_with_session'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:17:in `create'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:09:57 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl8GJqARPzN5GiQvcHoKa5hwrSseGvNGTAesLP+rfDaHkH3ggzL6ySHNw0GpOTYUrIVs7WsnvjkZpOa9IrKFzw==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/encryptor.rb:3:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:167:in `password_digest'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:47:in `password='
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.1.5) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.1.5) lib/active_record/core.rb:337:in `initialize'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+devise (4.4.1) lib/devise/models/registerable.rb:22:in `new_with_session'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:17:in `create'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:10:25 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl8GJqARPzN5GiQvcHoKa5hwrSseGvNGTAesLP+rfDaHkH3ggzL6ySHNw0GpOTYUrIVs7WsnvjkZpOa9IrKFzw==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/encryptor.rb:3:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:167:in `password_digest'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:47:in `password='
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.1.5) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.1.5) lib/active_record/core.rb:337:in `initialize'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+devise (4.4.1) lib/devise/models/registerable.rb:22:in `new_with_session'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:17:in `create'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:10:46 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl8GJqARPzN5GiQvcHoKa5hwrSseGvNGTAesLP+rfDaHkH3ggzL6ySHNw0GpOTYUrIVs7WsnvjkZpOa9IrKFzw==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "olivagalvez@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 559ms (Views: 400.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:10:55 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CYqkgfQqeS/8evEIlDjciuSxpVRlrsqfc8Bo9DvLQDAwRd9H1wm81aStFmZNe+D10ERkkhCTh+AmYyJl5tK5yQ==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Regístrate"}
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/encryptor.rb:3:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:167:in `password_digest'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:47:in `password='
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.1.5) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.1.5) lib/active_record/core.rb:337:in `initialize'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+devise (4.4.1) lib/devise/models/registerable.rb:22:in `new_with_session'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:17:in `create'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 14:11:33 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (88.3ms)
+Completed 200 OK in 436ms (Views: 433.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:11:42 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a4V9Mwc3KEmE5A9Vcs1msleAgc2teiz99kYY/a7dXKNSSgb1JBTts9wz6DurjlrNY3VAC9hHYYKj5VJsc8SlWg==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/encryptor.rb:3:in `<top (required)>'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `block in require'
+activesupport (5.1.5) lib/active_support/dependencies.rb:258:in `load_dependency'
+activesupport (5.1.5) lib/active_support/dependencies.rb:292:in `require'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:167:in `password_digest'
+devise (4.4.1) lib/devise/models/database_authenticatable.rb:47:in `password='
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.1.5) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.1.5) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.1.5) lib/active_record/core.rb:337:in `initialize'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+activerecord (5.1.5) lib/active_record/inheritance.rb:66:in `new'
+devise (4.4.1) lib/devise/models/registerable.rb:22:in `new_with_session'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+devise (4.4.1) app/controllers/devise/registrations_controller.rb:17:in `create'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.5) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-03-09 14:14:13 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (105.3ms)
+Completed 200 OK in 1229ms (Views: 1188.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:14:22 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PsIbgnU661vNGVOsOdBUTj/nh6JMcDxiOpmwVirZp2QHDWBEVhkuoZXOtMLgk2gxCxJGZDlNcR1vOvrH98BenQ==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "olivagalvez@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/devise-4.4.1/app/views/devise/registrations/new.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 849ms (Views: 353.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-09 14:14:28 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IghND+Xq1pi7Fi51P1pPNYHauWCjnFIliVQi40P0ec4bxzbJxskTYuPByRvmGXNKtS94ptahH1rc92hynu2ANw==", "user"=>{"email"=>"olivagalvez@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Regístrate"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "olivagalvez@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "olivagalvez@gmail.com"], ["encrypted_password", "$2a$11$fltgs.C0Oh.jtAj5GKihluroNcRaUN3RdiiEAZ9DNaTuyUXCSY0Qa"], ["created_at", "2018-03-09 13:14:29.001347"], ["updated_at", "2018-03-09 13:14:29.001347"]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-03-09 13:14:29.025414"], ["last_sign_in_at", "2018-03-09 13:14:29.025414"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-03-09 13:14:29.029423"], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 517ms (ActiveRecord: 43.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-09 14:14:29 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 308ms (Views: 276.8ms | ActiveRecord: 0.0ms)
+
+
