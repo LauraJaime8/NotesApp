@@ -24,6 +24,13 @@
           <li>
               <li><%= link_to "Close", destroy_user_session_path, :method => :delete %></li>
           </li>
+          <%else%>
+          <li>
+              <li><%= link_to "Log In", new_user_session_path %></li>
+          </li>
+          <li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          </li>
           <%end%>
         </ul>
       </nav>

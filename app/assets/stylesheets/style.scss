@@ -26,4 +26,45 @@ html, body {
     padding-left: 20px;
     color: #FFFAD5;
   }
+  .text-left{
+    text-align: left;
+  }
+  .text-rigth{
+    text-align: right;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .field,.top-space,.actions{
+    margin-top: 1em;
+  }
+  .white {
+    color: #ECF0F1;
+  }
+  .btn{
+
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 50px;
+    background-color: #E74C3C;
+  }
+  .red {
+    color: #E74C3C !important;
+  }
+  .be-red{
+    background-color: #E74C3C;
+  }
+  .form-control{
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    width: 100%;
+    display: block;
+    padding: 10px 0px;
+    font-size: 1.2em;
+  }
+
 }
