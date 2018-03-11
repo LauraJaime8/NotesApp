@@ -1,0 +1,26 @@
+.panel-note {
+  display: flex;
+
+  .options {
+    display: flex;
+    justify-content: flex-end;
+
+    .delete,
+    .edit {
+      padding: 5px;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+  }
+  .each-note {
+    box-shadow: 0 0 1em gold;
+    background: gold;;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+  }
+}

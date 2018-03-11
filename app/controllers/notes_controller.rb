@@ -12,16 +12,21 @@ class NotesController < ApplicationController
   #GET /notes/new
   def new
     @note = Note.new
+    render :new
   end
   #POST /notes
 
   def create
     @note = Note.new(note_params)
     if @note.save #Si las validaciones han pasado
-      redirect_to @note
+      redirect_to notes_path
     else
-      render :new #New es la vista a la que se refiere y no al metodo de este mismo controlador
+      redirect_to notes_path #New es la vista a la que se refiere y no al metodo de este mismo controlador
     end
+  end
+
+  def edit
+    @note = Note.find(params[:id])
   end
 
   def update

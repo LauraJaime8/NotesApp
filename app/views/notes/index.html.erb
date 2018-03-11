@@ -1,6 +1,21 @@
-<% @notes.each do |notes| %>
-  <h1><%= notes.title %></h1>
+<div class="new-note">
+  <%= link_to 'Nueva nota', new_note_path, class: 'btn btn-outline-primary' %>
+</div>
+<div class="panel-note">
+  <% @notes.each do |notes| %>
+  <div class="each-note">
+    <div class="options">
+      <div class="edit">
+        <%= link_to '<i class="far fa-edit"></i>'.html_safe, notes, method: :edit %>
+      </div>
+      <div class="delete">
+        <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, notes, method: :delete %>
+      </div>
+    </div>
+    <p class="title"><%= notes.title %></p>
   <div>
-    <%= notes.content %> - <%= link_to "Eliminar", notes, method: :delete %>
   </div>
-<%end%>
+    <%= notes.content %>
+  </div>
+  <%end%>
+</div>
