@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     patch "/notes/:id" update
     put "/notes/:id" update
 =end
-  root :to => "welcome#index"
+  root :to => "notes#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
