@@ -1,3 +1,7 @@
+.new-note {
+  margin-left: 20px;
+}
+
 .panel-note {
   display: flex;
 
@@ -8,19 +12,22 @@
     .delete,
     .edit {
       padding: 5px;
+      a {
+        color: black;
+      }
     }
   }
 
   .title {
     font-size: 20px;
   }
-  .each-note {
-    box-shadow: 0 0 1em gold;
-    background: gold;
+  .card-panel {
+    width: 300px;
+    height: 270px;
     margin: 20px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 }

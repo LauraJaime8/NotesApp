@@ -1,9 +1,9 @@
 <div class="new-note">
-  <%= link_to 'Nueva nota', new_note_path, class: 'btn btn-outline-primary' %>
+  <%= link_to 'Nueva nota', new_note_path, class: 'waves-effect waves-light btn' %>
 </div>
 <div class="panel-note">
   <% @notes.each do |notes| %>
-  <div class="each-note">
+  <div class="card-panel teal each-note">
     <div class="options">
       <div class="edit">
         <%= link_to '<i class="far fa-edit"></i>'.html_safe, notes, method: :edit %>
