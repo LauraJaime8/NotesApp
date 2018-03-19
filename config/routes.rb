@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :notes
+  root :to => "notes#index"
+
 =begin
     get "/notes" index
     post "/notes" create
@@ -13,7 +15,5 @@ Rails.application.routes.draw do
     patch "/notes/:id" update
     put "/notes/:id" update
 =end
-  root :to => "notes#index"
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -15,9 +15,9 @@ class NotesController < ApplicationController
     render :new
   end
   #POST /notes
-
   def create
     @note = Note.new(note_params)
+
     if @note.save #Si las validaciones han pasado
       redirect_to notes_path
     else
@@ -30,12 +30,19 @@ class NotesController < ApplicationController
   end
 
   def update
-    #@note.update_attributes({title: 'Nuevo titulo'})
+    @note = Note.find(params[:id])
+
+    if @note.update(note_params)
+      redirect_to notes_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
+
     redirect_to notes_path
   end
 
