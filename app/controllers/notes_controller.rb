@@ -1,20 +1,18 @@
 class NotesController < ApplicationController
-  #GET /notes
+
   def index
     @notes = Note.all
   end
 
-  #GET /notes/:id
   def show
     @note = Note.find(params[:id])
   end
 
-  #GET /notes/new
   def new
     @note = Note.new
     render :new
   end
-  #POST /notes
+
   def create
     @note = Note.new(note_params)
 
@@ -35,7 +33,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       redirect_to notes_path
     else
-      render 'edit'
+      redirect_to notes_path
     end
   end
 
@@ -45,7 +43,6 @@ class NotesController < ApplicationController
 
     redirect_to notes_path
   end
-
 
   private
 

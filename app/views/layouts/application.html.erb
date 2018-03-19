@@ -11,29 +11,23 @@
   </head>
 
   <body>
-    <header>
-      <nav class="nav">
-        <div class="logo">
-          <i class="far fa-sticky-note fa-3x"></i>
-        </div>
-        <ul class="nav-elements">
-          <li>Settings</li>
-          <li>My profile</li>
-          <% if user_signed_in? %>
-          <li>
-              <li><%= link_to "Close", destroy_user_session_path, :method => :delete %></li>
-          </li>
-          <%else%>
-          <li>
-              <li><%= link_to "Log In", new_user_session_path %></li>
-          </li>
-          <li>
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          </li>
-          <%end%>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to "AwesomeNotes", notes_path, class: "navbar-brand" %>
+      <ul class="elem">
+        <% if user_signed_in? %>
+        <li>
+          <li><%= link_to "Close", destroy_user_session_path, :method => :delete %></li>
+        </li>
+        <%else%>
+        <li>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+        </li>
+        <li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        </li>
+        <%end%>
+      </ul>
+    </nav>
     <p class="alert"><%= alert %></p>
     <p class="notice"><%= notice %></p>
     <%= yield %>
