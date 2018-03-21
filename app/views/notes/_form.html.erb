@@ -1,4 +1,4 @@
-<form>
+
   <%= form_for(@note) do |f| %>
     <% @note.errors.full_messages.each do |message| %>
       <div class="be-red white">
@@ -9,10 +9,9 @@
       <%= f.text_field :title, placeholder: "Título", class:"form-control" %>
     </div>
     <div class="form-group">
-      <%= f.text_area :content, placeholder: "Contenido de la nota", class:"form-control" %>
+      <%= f.text_field :content, placeholder: "Contenido de la nota", class:"form-control" %>
     </div>
     <div class="form-group">
       <%= f.submit "Guardar" %>
     </div>
   <%end%>
-</form>

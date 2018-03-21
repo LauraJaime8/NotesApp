@@ -18,13 +18,50 @@
     border-radius: 2px;
   }
 
-  .card {
-    background-color: #1D94BF;
-    margin: 20px;
-    padding: 15px;
+  .note {
+    width: 200px;
+    height: 200px;
+    background: #FFDA65;
+    margin: 25px;
+    position: relative;
+
+    .header {
+      height: 40px;
+      width: 235  px;
+      background: #FFD248;
+
+    }
+
+    .footer {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .fold {
+      border-top: 40px solid #FFC43A;
+      border-left: 40px solid #FFAE17;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
 
     a {
       color: black;
+    }
+  }
+
+  .options {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+    padding-top: 5px;
+
+    a {
+      padding-left: 5px;
     }
   }
 }

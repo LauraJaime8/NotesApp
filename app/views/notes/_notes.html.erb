@@ -1,40 +1,21 @@
-<!--
-
 <div class="new-note">
   <%= link_to 'Nueva nota', new_note_path, class: 'waves-effect waves-light btn' %>
 </div>
 <div class="panel-note">
   <% @notes.each do |notes| %>
-  <div class="card-panel teal each-note">
-    <div class="options">
-      <div class="edit">
-        <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_note_path(notes) %>
+    <div class="note" style="width: 18rem;">
+      <div class="header">
+        <div class="options">
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_note_path(notes) %>
+          <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, note_path(notes), method: :delete, data: {confirm: 'Are you sure?'} %>
+        </div>
       </div>
-      <div class="delete">
-        <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, note_path(notes), method: :delete, data: {confirm: 'Are you sure?'} %>
-      </div>
-    </div>
-    <p class="title"><%= notes.title %></p>
-  <div>
-  </div>
-    <%= notes.content %>
-  </div>
-  <%end%>
-</div>
--->
-<div class="new-note">
-  <%= link_to 'Nueva nota', new_note_path, class: 'waves-effect waves-light btn' %>
-</div>
-<div class="panel-note">
-  <% @notes.each do |notes| %>
-    <div class="card" style="width: 18rem;">
       <div class="card-body">
         <p class="title"><%= notes.title %></p>
         <%= notes.content %>
       </div>
-      <div class="options">
-        <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_note_path(notes) %>
-        <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, note_path(notes), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <div class="footer">
+        <div class="fold"></div>
       </div>
     </div>
   <%end%>
