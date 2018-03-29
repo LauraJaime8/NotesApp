@@ -1,0 +1,29 @@
+.wrapper {
+  text-align: center;
+  padding: 100px;
+
+  .content {
+    display: inline;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .label-name {
+    text-transform: uppercase;
+    label {
+      margin: 0;
+    }
+  }
+
+  .input-name {
+    margin-bottom: 20px;
+    input {
+      border: 1px solid grey;
+      border-radius: 4px;
+    }
+    input:focus {
+      background-color: #e5e5e5;
+    }
+
+  }
+}

@@ -1,0 +1,10 @@
+@import 'tokens';
+
+.nabvar {
+  .form-inline {
+    a:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
