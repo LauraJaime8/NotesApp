@@ -2,10 +2,16 @@
   text-align: center;
   padding: 100px;
 
-  .content {
-    display: inline;
-    justify-content: center;
-    margin-bottom: 10px;
+  .form-field {
+    padding: 500px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .field {
+    label {
+      float: left;
+    }
   }
 
   .label-name {
@@ -24,6 +30,5 @@
     input:focus {
       background-color: #e5e5e5;
     }
-
   }
 }

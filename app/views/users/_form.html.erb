@@ -10,7 +10,8 @@
     </div>
   <% end %>
 
-  <div class="content">
+<div class="form-field">
+  <div class="field">
     <div class="label-name">
       <%= form.label :name %>
     </div>
@@ -30,6 +31,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create user', :class => 'btn btn-primary' %>
   </div>
-<% end %>
+  <% end %>
+</div>
