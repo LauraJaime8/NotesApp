@@ -10,28 +10,27 @@
     </div>
   <% end %>
 
-<div class="form-field">
-  <div class="field">
+<form id="form-signUp" action="" method="post" autocomplete="off">
     <div class="label-name">
       <%= form.label :name %>
     </div>
+
+
     <div class="input-name">
       <%= form.text_field :name, id: :user_name, :class => "input-name", :placeholder => "Your username" %>
     </div>
-  </div>
 
 
-  <div class="field">
     <div class="label-name">
       <%= form.label :password %>
     </div>
     <div class="input-name">
       <%= form.text_field :password, id: :user_password, :placeholder => "Your password" %>
     </div>
-  </div>
+
 
   <div class="actions">
     <%= form.submit 'Create user', :class => 'btn btn-primary' %>
   </div>
   <% end %>
-</div>
+</form>
