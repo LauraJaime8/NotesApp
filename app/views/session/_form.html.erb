@@ -1,5 +1,8 @@
 <%= form_tag("/login", method: "post") do %>
-  <div class="label-name">
+
+<div class="container">
+
+<div class="label-name">
   <%= label_tag :username %>
 </div>
 <div class="input-name">
@@ -11,5 +14,16 @@
 <div class="input-name">
   <%= password_field_tag :password, params[:password], :placeholder => "Enter Password" %>
 </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+<div class="actions"><%= submit_tag "Log in" , :class => 'btn btn-primary'%></div>
+
+  <label>
+  <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+
+</div>
+<div class="container">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
   <% end %>

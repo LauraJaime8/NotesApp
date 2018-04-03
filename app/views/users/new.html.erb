@@ -1,7 +1,6 @@
-<div class="wrapper">
-  <h1 class="title">New user</h1>
+<div class="wrapper", style =" padding-top: 30px;">
+  <div class="logo ", style =" padding-bottom: 30px;">
+    <%= image_tag("signUp.png", :style => 'width: 200px;')%>
+</div>
   <%= render 'form', user: @user %>
-
-  <%= link_to 'Back', users_path %>
-
 </div>

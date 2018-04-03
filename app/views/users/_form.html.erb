@@ -9,8 +9,7 @@
       </ul>
     </div>
   <% end %>
-
-<form id="form-signUp" action="" method="post" autocomplete="off">
+  <div class="container">
     <div class="label-name">
       <%= form.label :name %>
     </div>
@@ -27,10 +26,10 @@
     <div class="input-name">
       <%= form.text_field :password, id: :user_password, :placeholder => "Your password" %>
     </div>
-
-
-  <div class="actions">
+</div>
+  <div class="container">  <div class="actions">
     <%= form.submit 'Create user', :class => 'btn btn-primary' %>
   </div>
+<%= link_to 'Back', users_path %>
+</div>
   <% end %>
-</form>

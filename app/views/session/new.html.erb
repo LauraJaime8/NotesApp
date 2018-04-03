@@ -1,7 +1,6 @@
-<div class="wrapper">
-  <h1 class="title">Log in</h1>
+<div class="wrapper", style =" padding-top: 10px;">
+  <div class="logo ">
+    <%= image_tag("logIn.png", :style => 'width: 300px;')%>
+</div>
   <%= render 'form', username: @session %>
-
-  <%= link_to 'Back', users_path %>
-
 </div>
