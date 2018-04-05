@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+  <%= link_to 'New Note', new_note_path, :class => "btn btn-primary btn-new" %>
   <div class="content-notes">
     <% @notes.each do |note| %>
       <div class="note">
         <div class="title"><%= note.title%></div>
         <div class="body"><%= note.body %></div>
-        <!--div class="user"> <%= note.user.name %></div-->
-        <div><!--%= Time.now.strftime("%d/%m/%Y - %H:%M")%-->
-          <%= note.created_at.strftime("%b %d, %Y - %H:%M") %> 
+        <div class="user-date">
+          <div class="user">
+            <%= note.user.name %>
+          </div>
+          <div class="date">
+            <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
+          </div>
         </div>
         <div class="buttons">
           <div class="list">
@@ -17,12 +22,6 @@
             <!--div class="image"><i class="far fa-file-image"></i></div-->
           </div>
         </div>
-
-
       </div>
     <% end %>
   </div>
-
-<br>
-
-<%= link_to 'New Note', new_note_path %>
