@@ -5,13 +5,16 @@
       <div class="note">
         <div class="title"><%= note.title%></div>
         <div class="body"><%= note.body %></div>
-        <div class="user"> <%= note.user.name %></div>
+        <!--div class="user"> <%= note.user.name %></div-->
+        <div><!--%= Time.now.strftime("%d/%m/%Y - %H:%M")%-->
+          <%= note.created_at.strftime("%b %d, %Y - %H:%M") %> 
+        </div>
         <div class="buttons">
           <div class="list">
             <div class="option" title="Show"><i class="fas fa-eye"></i><%= link_to 'Show', note %></div>
-            <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to '', edit_note_path(note) %></div>
-            <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to '', note, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-            <div class="image"><i class="far fa-file-image"></i></div>
+            <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
+            <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <!--div class="image"><i class="far fa-file-image"></i></div-->
           </div>
         </div>
 
