@@ -22,25 +22,28 @@
           </li>
         </ul>
       <div>
-        <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
-          <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
-          <%= submit_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0 btn-search"%>
+        <% if session[:user] %>
+          <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
+            <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
+            <%= submit_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0 btn-search"%>
+          <%end%>
         <%end%>
       </div>
         <form class="form-inline my-2 my-lg-0">
           <% if session[:user] %>
-            Logged in as <%= session[:user] %>.
-            <%= link_to "Log out", logout_path %>
+            <%= session[:user] %>
+            <%= link_to "Log out", logout_path, :class => 'log-out btn btn-primary' %>
           <% else %>
-            <%= link_to "Sign up", signup_path, :class => "form-control mr-sm-2 btn-signup" %>
-            <%= link_to "Log in", login_path, :class => "form-control mr-sm-2" %>
-          <% end %>
-          <% flash.each do |name, msg| %>
-            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            <%= link_to "Sign up", signup_path, :class => "form-control mr-sm-2 btn btn-primary" %>
+            <%= link_to "Log in", login_path, :class => "form-control mr-sm-2 btn btn-warning" %>
           <% end %>
         </form>
+
       </div>
     </nav>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
+    <% end %>
     <div id="container">
       <%= yield %>
     </div>

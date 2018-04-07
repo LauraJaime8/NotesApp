@@ -66,8 +66,8 @@ class NotesController < ApplicationController
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
-    if @note.user != session[:user]
-      redirect_to notes_path, :alert =>"no puedes borrar una nota que no es tuya"
+    if @note.user.name != session[:user]
+      redirect_to notes_path, :alert =>"No puedes borrar una nota que no es tuya"
     else
       @note.destroy
       respond_to do |format|

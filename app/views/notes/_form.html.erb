@@ -10,23 +10,19 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :note_title %>
+<div class="wrapper-form">
+  <div class="field form-group">
+    <%= form.label :title, class: 'title-form' %>
+    <%= form.text_field :title, id: :note_title, class: 'text-area' %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body, id: :note_body %>
+  <div class="field form-group">
+    <%= form.label :body, class: 'title-form' %>
+    <%= form.text_area :body, id: :note_body, class: 'text-area text-body' %>
   </div>
-
-<!--  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :note_user_id %>
-  </div> -->
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
+</div>
