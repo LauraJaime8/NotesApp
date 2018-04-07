@@ -1,0 +1,32 @@
+.wrapper-form {
+  padding: 50px 260px 10px 260px;
+  padding-top: 10px;
+
+  .form-group {
+    label {
+      margin: 0;
+    }
+  }
+
+  .text-area {
+    margin: 0;
+    border-radius: 4px;
+
+    &:hover {
+      border-radius: 4px;
+    }
+  }
+
+  .text-body {
+    display: grid;
+    width: 100%;
+  }
+}
+
+.title-forms {
+  padding: 20px 260px 0 260px;
+}
+
+.btn-form {
+  margin: 0 260px;
+}
