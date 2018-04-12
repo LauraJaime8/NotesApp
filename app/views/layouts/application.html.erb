@@ -10,42 +10,42 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <!--a class="navbar-brand" href="#"><i class="fab fa-fort-awesome-alt fa-2x"></i></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button-->
+        <a class="navbar-brand" href="#">  <%= link_to image_tag("olraN.png", :style => 'width: 200px;'), notes_path%></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to image_tag("olraN.png", :style => 'width: 200px;'), notes_path%>
-          </li>
-        </ul>
-      <div>
-        <% if session[:user] %>
-          <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
-            <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
-            <%= submit_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0 btn-search"%>
-          <%end%>
-        <%end%>
-      </div>
-        <form class="form-inline my-2 my-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+            </li>
+          </ul>
+        <div>
           <% if session[:user] %>
-            <%= session[:user] %>
-            <%= link_to "Log out", logout_path, :class => 'log-out btn btn-primary' %>
-          <% else %>
-            <%= link_to "Sign up", signup_path, :class => "form-control mr-sm-2 btn btn-primary" %>
-            <%= link_to "Log in", login_path, :class => "form-control mr-sm-2 btn btn-warning" %>
-          <% end %>
-        </form>
+            <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
+              <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
+              <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
+            <%end%>
+          <%end%>
+        </div>
+          <form class="form-inline my-2 my-lg-0">
+            <% if session[:user] %>
+              <%= session[:user] %>
+              <%= link_to "Log out", logout_path, :class => 'log-out btn btn-primary' %>
+            <% else %>
+              <%= link_to "Sign up", signup_path, :class => "form-control mr-sm-2 btn btn-primary" %>
+              <%= link_to "Log in", login_path, :class => "form-control mr-sm-2 btn btn-warning" %>
+            <% end %>
+          </form>
 
+        </div>
+      </nav>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
+      <% end %>
+      <div id="container">
+        <%= yield %>
       </div>
-    </nav>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
-    <% end %>
-    <div id="container">
-      <%= yield %>
-    </div>
   </body>
 </html>
