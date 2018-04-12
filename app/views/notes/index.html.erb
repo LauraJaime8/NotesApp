@@ -45,12 +45,7 @@
             </div>
             <div class="buttons">
               <div class="list">
-                <div class="option color" title="Color">Color</div>
-                <div class="colors">
-                  <div class="red">Red</div>
-
-                  <div class="white">white</div>
-                </div>
+                <div class="option" title="Show"><i class="fas fa-eye"></i><%= link_to 'Show', note %></div>
                 <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
                 <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete %></div>
                 <!--div class="image"><i class="far fa-file-image"></i></div-->
@@ -76,7 +71,7 @@
             </div>
             <div class="buttons">
               <div class="list">
-                <div class="option" title="Color">Color</div>
+                <div class="option" title="Show"><i class="fas fa-eye"></i><%= link_to 'Show', note %></div>
                 <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
                 <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete %></div>
                 <!--div class="image"><i class="far fa-file-image"></i></div-->
