@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328112459) do
+ActiveRecord::Schema.define(version: 20180412112453) do
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "cover_filename"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
@@ -26,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180328112459) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cover_filename"
   end
 
 end

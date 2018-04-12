@@ -26,6 +26,13 @@
     <div class="input-name">
       <%= form.text_field :password, id: :user_password, :placeholder => "Your password" %>
     </div>
+
+    <div class="label-name">
+      <%= form.label :cover %>
+    </div>
+    <div class="input-name">
+      <%= form.file_field :cover %>
+    </div>
 </div>
   <div class="container">  <div class="actions">
     <%= form.submit 'Create user', :class => 'btn btn-primary' %>
