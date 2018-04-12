@@ -1,5 +1,8 @@
+<% if session[:user] %>
 
   <%= link_to 'New Note', new_note_path, :class => "btn btn-primary btn-new" %>
+  <% end %>
+<% if session[:user] %>
   <div class="content-notes">
     <% if @notes.count > 0 %>
       <% @notes[0..3].each do |note| %>
@@ -83,3 +86,4 @@
         <% end %>
       <% end %>
     </div>
+    <% end %>
