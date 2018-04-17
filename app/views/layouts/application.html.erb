@@ -19,9 +19,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-
-            </li>
+            <li class="nav-item active"></li>
           </ul>
         <div>
           <% if session[:user] %>
@@ -29,6 +27,11 @@
               <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
               <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
             <%end%>
+          <%end%>
+        </div>
+        <div>
+          <% if session[:user] %>
+            <a class="navbar-brand" href="#">  <%= link_to 'Users', users_path%></a>
           <%end%>
         </div>
           <form class="form-inline my-2 my-lg-0">
@@ -40,9 +43,9 @@
               <%= link_to "Log in", login_path, :class => "form-control mr-sm-2 btn btn-warning" %>
             <% end %>
           </form>
-
         </div>
       </nav>
+
       <% flash.each do |name, msg| %>
              <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
            <% end %>
