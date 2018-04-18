@@ -31,7 +31,14 @@
         </div>
         <div>
           <% if session[:user] %>
-            <a class="navbar-brand" href="#">  <%= link_to 'Users', users_path%></a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to session[:user], '#', class: "navbar-link" %>
+            <div class="navbar-dropdown">
+                <%= link_to "Edit", '#', class: "navbar-item" %>
+                <%= link_to "Log out", '#', class: "navbar-item" %>
+            </div>
+          </div>
+          
           <%end%>
         </div>
           <form class="form-inline my-2 my-lg-0">
@@ -39,8 +46,11 @@
               <%= session[:user] %>
               <%= link_to "Log out", logout_path, :class => 'log-out btn btn-primary' %>
             <% else %>
-              <%= link_to "Sign up", signup_path, :class => "form-control mr-sm-2 btn btn-primary" %>
-              <%= link_to "Log in", login_path, :class => "form-control mr-sm-2 btn btn-warning" %>
+              <%= form_tag "login", method: :post do %>
+                <%= text_field_tag :username, params[:username], :placeholder => "Enter Username"%>
+                <%= password_field_tag :password, params[:password], :placeholder => "Enter Password" %>
+                <%= submit_tag "Log in" , :class => 'btn btn-primary'%>
+              <% end %>
             <% end %>
           </form>
         </div>
