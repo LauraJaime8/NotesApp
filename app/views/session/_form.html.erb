@@ -1,90 +1,25 @@
 <%= form_tag("/login", method: "post") do %>
 
-<div class="container">
-
-<div class="label-name">
-  <%= label_tag :username %>
-</div>
-<div class="input-name">
-  <%= text_field_tag :username, params[:username], :placeholder => "Enter Username"%>
-</div>
-  <div class="label-name">
-  <%= label_tag :password %>
-</div>
-<div class="input-name">
-  <%= password_field_tag :password, params[:password], :placeholder => "Enter Password" %>
-</div>
-<div class="actions"><%= submit_tag "Log in" , :class => 'btn btn-primary'%></div>
-
-  <label>
-  <input type="checkbox" checked="checked" name="remember"> Remember me
-  </label>
-
-</div>
-<div class="container">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="login">
+    <div class="form-group">
+      <div class="label-name">
+        <%= label_tag :username %>
+      </div>
+      <div class="input-name">
+        <%= text_field_tag :username, params[:username], :class => "form-control", :placeholder => "Enter Username"%>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="label-name">
+        <%= label_tag :password %>
+      </div>
+      <div class="input-name">
+        <%= password_field_tag :password, params[:password], :class => "form-control", :placeholder => "Enter Password" %>
+      </div>
+    </div>
+    <div class="actions"><%= submit_tag "Log in" , :class => 'btn btn-primary'%></div>
+    <label><input type="checkbox" checked="checked" name="remember">Remember me</label>
+    <a class="forgot-password" href="#">Forgot password?</a>
   </div>
-
-  <style>
-  /* Style all input fields */
-  input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
-  }
-
-  /* Style the submit button */
-  input[type=submit] {
-      background-color: #4CAF50;
-      color: white;
-  }
-
-  /* Style the container for inputs */
-  .container {
-      background-color: #f1f1f1;
-      padding: 20px;
-  }
-
-  /* The message box is shown when the user clicks on the password field */
-  #message {
-      display:none;
-      background: #f1f1f1;
-      color: #000;
-      position: relative;
-      padding: 20px;
-      margin-top: 10px;
-  }
-
-  #message p {
-      padding: 10px 35px;
-      font-size: 18px;
-  }
-
-  /* Add a green text color and a checkmark when the requirements are right */
-  .valid {
-      color: green;
-  }
-
-  .valid:before {
-      position: relative;
-      left: -35px;
-      content: "✔";
-  }
-
-  /* Add a red text color and an "x" when the requirements are wrong */
-  .invalid {
-      color: red;
-  }
-
-  .invalid:before {
-      position: relative;
-      left: -35px;
-      content: "✖";
-  }
-  </style>
-  <% end %>
+  <%= link_to 'Back', notes_path,class: 'btn btn-primary btn-form' %>
+<% end %>
