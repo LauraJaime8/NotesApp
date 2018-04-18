@@ -1,29 +1,4 @@
 .wrapper {
   text-align: center;
   padding: 100px;
-
-  .form-field {
-    padding: 508px;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .field {
-    label {
-      float: left;
-    }
-  }
-
-
-  .input-name {
-    margin-bottom: 20px;
-    input {
-      border: 1px solid grey;
-      border-radius: 4px;
-    }
-  }
-}
-
-.log-out {
-  margin-left: 15px;
 }
