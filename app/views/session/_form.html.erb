@@ -20,6 +20,7 @@
     <div class="actions"><%= submit_tag "Log in" , :class => 'btn btn-primary'%></div>
     <label><input type="checkbox" checked="checked" name="remember">Remember me</label>
     <a class="forgot-password" href="#">Forgot password?</a>
+      <%= link_to 'Back', notes_path, class: 'btn btn-primary btn-form' %>
   </div>
-  <%= link_to 'Back', notes_path, class: 'btn btn-primary btn-form' %>
+
 <% end %>

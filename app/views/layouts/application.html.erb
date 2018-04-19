@@ -45,12 +45,6 @@
             <% if session[:user] %>
               <%= session[:user] %>
               <%= link_to "Log out", logout_path, :class => 'log-out btn btn-primary' %>
-            <% else %>
-              <%= form_tag "login", method: :post do %>
-                <%= text_field_tag :username, params[:username], :placeholder => "Enter Username"%>
-                <%= password_field_tag :password, params[:password], :placeholder => "Enter Password" %>
-                <%= submit_tag "Log in" , :class => 'btn btn-primary'%>
-              <% end %>
             <% end %>
           </form>
         </div>
@@ -88,9 +82,9 @@
                  <div class="col-md-12 col-xs-8">
                    <h3 style="color: white;">Join Orla Notes Today</h3>
                    <br>
-                    <%= link_to "Sign up", signup_path, :class => "form-control mr-sm-2 btn btn-primary" %>
+                    <%= link_to "Sign up", signup_path, :class => "form-control btn btn-verde " %>
                     <br>  <br>
-                    <%= link_to "Log in", login_path, :class => "form-control mr-sm-2 btn btn-warning" %>
+                    <%= link_to "Log in", login_path, :class => "form-control btn btn-amarillo" %>
                  </div>
                  </div>
                    <!--div class="row">
