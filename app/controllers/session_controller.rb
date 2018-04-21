@@ -10,7 +10,8 @@ class SessionController < ApplicationController
       elsif @user.password == params[:password]
         session[:user] = @user.name
         session[:user_id] = @user.id
-        redirect_to root_url, :notice => "Logged in!"
+        session[:user_cover] = @user.cover_filename
+        redirect_to root_url
       else
         flash.now.alert = "password was invalid"
         render :new

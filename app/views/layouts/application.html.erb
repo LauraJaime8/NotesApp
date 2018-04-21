@@ -13,41 +13,48 @@
   <div class="padre">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">  <%= link_to image_tag("olraN.png", :style => 'width: 200px;'), notes_path%></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active"></li>
           </ul>
-        <div>
           <% if session[:user] %>
-            <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
-              <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
-              <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
-            <%end%>
-          <%end%>
-        </div>
-        <div>
-          <% if session[:user] %>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <%=  link_to session[:user], edit_user_path(session[:user_id]) %>
-            <div class="navbar-dropdown">
-                <%= link_to "Edit", '#', class: "navbar-item" %>
-                <%= link_to "Log out", '#', class: "navbar-item" %>
+            <div>
+              <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
+                <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
+                <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
+              <%end%>
             </div>
-          </div>
-
-          <%end%>
-        </div>
-          <form class="form-inline my-2 my-lg-0">
-            <% if session[:user] %>
-              <%= session[:user] %>
-              <%= link_to "Log out", logout_path, :class => 'log-out btn btn-primary' %>
-            <% end %>
-          </form>
-        </div>
+            <div>
+              <ul id="menu">
+                <li>
+                  <input type="checkbox" name="list" id="nivel1-1">
+                    <label for="nivel1-1">
+                      <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
+                    </label>
+                    <ul class="interior">
+                      <li>
+                        <input  name="list" id="nivel2-1">
+                          <label for="nivel2-1">
+                            <%= link_to "Profile", "#" %>
+                          </label>
+                        </li>
+                      <li>
+                        <input  name="list" id="nivel2-1">
+                          <label for="nivel2-1">
+                            <%= link_to "Edit User", edit_user_path(session[:user_id]) %>
+                          </label>
+                        </li>
+                        <li>
+                          <input  name="list" id="nivel2-2">
+                          <label for="nivel2-2">
+                            <%= link_to "Log out", logout_path %>
+                          </label>
+                        </li>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+            <%end%>
       </nav>
 
       <% flash.each do |name, msg| %>

@@ -76,3 +76,14 @@
     background-color: #d5d01f;
     border-color: #ffffff;
 }
+#menu * { list-style:none;}
+#menu li{ }
+#menu li a{color:#222; text-decoration:none;}
+#menu li a:before{ ;}
+#menu input[name="list"] {
+	position: absolute;
+	left: -1000em;
+	}
+
+#menu .interior{display: none;}
+#menu input:checked ~ ul{display:block;}
