@@ -28,8 +28,11 @@
               <ul id="menu">
                 <li>
                   <input type="checkbox" name="list" id="nivel1-1">
-                    <label for="nivel1-1">
-                      <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
+                    <label class="complete-user" for="nivel1-1">
+                      <div class="user-name">
+                          <%= session[:user]%>
+                      </div>
+                      <%= image_tag "/image /#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
                     </label>
                     <ul class="interior">
                       <li>

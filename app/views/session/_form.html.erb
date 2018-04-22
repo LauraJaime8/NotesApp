@@ -1,26 +1,26 @@
 <%= form_tag("/login", method: "post") do %>
-
   <div class="login">
-    <div class="form-group">
-      <div class="label-name">
-        <%= label_tag :username %>
+    <div class="container">
+      <div class="form-group">
+        <div class="label-name">
+          <%= label_tag :username %>
+        </div>
+        <div class="input-name">
+          <%= text_field_tag :username, params[:username], :class => "form-control", :placeholder => "Enter Username"%>
+        </div>
       </div>
-      <div class="input-name">
-        <%= text_field_tag :username, params[:username], :class => "form-control", :placeholder => "Enter Username"%>
+      <div class="form-group">
+        <div class="label-name">
+          <%= label_tag :password %>
+        </div>
+        <div class="input-name">
+          <%= password_field_tag :password, params[:password], :class => "form-control", :placeholder => "Enter Password" %>
+        </div>
       </div>
+      <div class="actions"><%= submit_tag "Log in" , :class => 'btn btn-primary'%></div>
+      <label><input type="checkbox" checked="checked" name="remember">Remember me</label>
+      <a class="forgot-password" href="#">Forgot password?</a>
+        <%= link_to 'Back', notes_path, class: 'btn btn-primary btn-form' %>
     </div>
-    <div class="form-group">
-      <div class="label-name">
-        <%= label_tag :password %>
-      </div>
-      <div class="input-name">
-        <%= password_field_tag :password, params[:password], :class => "form-control", :placeholder => "Enter Password" %>
-      </div>
-    </div>
-    <div class="actions"><%= submit_tag "Log in" , :class => 'btn btn-primary'%></div>
-    <label><input type="checkbox" checked="checked" name="remember">Remember me</label>
-    <a class="forgot-password" href="#">Forgot password?</a>
-      <%= link_to 'Back', notes_path, class: 'btn btn-primary btn-form' %>
   </div>
-
 <% end %>

@@ -87,3 +87,15 @@
 
 #menu .interior{display: none;}
 #menu input:checked ~ ul{display:block;}
+
+.complete-user {
+  display: flex;
+}
+
+.avatar-user {
+  cursor: pointer;
+}
+
+.user-name {
+  padding-right: 8px;
+}

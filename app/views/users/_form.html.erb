@@ -10,31 +10,37 @@
     </div>
   <% end %>
   <div class="sign-up">
-    <div class="form-group">
+    <div class="container">
+      <div class="form-group">
+        <div class="label-name">
+          <%= form.label :name %>
+        </div>
+        <div class="input-name">
+          <%= form.text_field :name, id: :user_name, :class => "form-control", :placeholder => "Your username" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label-name">
+          <%= form.label :password %>
+        </div>
+        <div class="input-name">
+          <%= form.text_field :password, id: :user_password, :class => "form-control", :placeholder => "Your password" %>
+        </div>
+      </div>
       <div class="label-name">
-        <%= form.label :name %>
+        <%= form.label :avatar %>
       </div>
-      <div class="input-name">
-        <%= form.text_field :name, id: :user_name, :class => "input-name", :placeholder => "Your username" %>
+      <div class="input-name search">
+        <%= form.file_field :cover %>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="label-name">
-        <%= form.label :password %>
+      <div >
+        <div class="actions">
+        <%= form.submit 'Create user', :class => 'btn btn-primary' %>
       </div>
-      <div class="input-name">
-        <%= form.text_field :password, id: :user_password, :placeholder => "Your password" %>
+      <%= link_to 'Back', notes_path, :class => 'btn btn-primary'  %>
       </div>
     </div>
-    <div class="label-name">
-      <%= form.label :avatar %>
-    </div>
-    <div class="input-name">
-      <%= form.file_field :cover %>
-    </div>
+
   </div>
-  <div class="container">  <div class="actions">
-    <%= form.submit 'Create user', :class => 'btn btn-primary' %>
-  </div>
-  <%= link_to 'Back', users_path, :class => 'btn btn-primary'  %>
+
 <% end %>
