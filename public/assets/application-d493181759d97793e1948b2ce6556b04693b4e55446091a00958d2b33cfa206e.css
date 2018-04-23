@@ -362,14 +362,14 @@ sup {
 
 /* line 198, /Library/Ruby/Gems/2.3.0/gems/bootstrap-4.0.0/assets/stylesheets/bootstrap/_reboot.scss */
 a {
-  color: #007bff;
+  color: #ffc107;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 /* line 15, /Library/Ruby/Gems/2.3.0/gems/bootstrap-4.0.0/assets/stylesheets/bootstrap/mixins/_hover.scss */
 a:hover {
-  color: #0056b3;
+  color: #ffc107;
   text-decoration: underline;
 }
 

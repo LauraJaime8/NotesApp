@@ -29,10 +29,7 @@
                 <li>
                   <input type="checkbox" name="list" id="nivel1-1">
                     <label class="complete-user" for="nivel1-1">
-                      <div class="user-name">
-                          <%= session[:user]%>
-                      </div>
-                      <%= image_tag "/image /#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
+                      <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
                     </label>
                     <ul class="interior">
                       <li>
@@ -97,11 +94,6 @@
                     <%= link_to "Log in", login_path, :class => "form-control btn btn-amarillo" %>
                  </div>
                  </div>
-                   <!--div class="row">
-                 <div class="col-md-12 col-xs-8">
-                   .col-md-4
-                 </div>
-               </div-->
                </div>
              </div>
 
