@@ -9,14 +9,17 @@
       </ul>
     </div>
   <% end %>
-  <div class="sign-up">
+  <div class="sign-up" style="margin-top: -50px;">
+    <div class="container" style="background: #007bff;  border: 1px solid #007bff;">
+      <h1 style= "color: #ffffff;">Subscription Form!</h1>
+    </div>
     <div class="container">
       <div class="form-group">
         <div class="label-name">
           <%= form.label :name %>
         </div>
         <div class="input-name">
-          <%= form.text_field :name, id: :user_name, :class => "form-control", :placeholder => "Your username" %>
+          <%= form.text_field :name, id: :user_name, :class => "form-control", :placeholder => "Your username", :required => true %>
         </div>
       </div>
       <div class="form-group">
@@ -24,17 +27,23 @@
           <%= form.label :password %>
         </div>
         <div class="input-name">
-          <%= form.text_field :password, id: :user_password, :class => "form-control", :placeholder => "Your password" %>
+          <%= form.text_field :password, id: :user_password, :class => "form-control", :placeholder => "Your password", :required => true %>
         </div>
       </div>
-      <div >
+      <div class="form-group">
+        <div class="label-name">
+          Confirm password
+        </div>
+        <div class="input-name">
+          <%= form.text_field :password_confirmation , :class => "form-control", :placeholder => "Confirm password", :required => true %>
+        </div>
+      </div>
         <div class="actions">
         <%= form.submit 'Create user', :class => 'btn btn-primary' %>
       </div>
-      <%= link_to 'Back', notes_path, :class => 'btn btn-primary'  %>
-      </div>
     </div>
-
+    <br>
+  <%= link_to "Log in", login_path, :class => "colorYellow"%> or go to <%= link_to "Home", notes_path, :class => "colorYellow"%>
   </div>
 
 <% end %>

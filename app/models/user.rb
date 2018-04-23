@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_many :notes
 
-
   attr_accessor :cover
  after_save :save_cover_image, if: :cover
 
@@ -18,4 +17,8 @@ class User < ApplicationRecord
    self.cover = nil
    update cover_filename: filename
  end
+
+   validates :name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
+   validates :password, :confirmation => true #password_confirmation attr
+   validates_length_of :password, :in => 6..20, :on => :create
 end
