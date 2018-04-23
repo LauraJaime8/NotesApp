@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;' if  @user.cover_filename?%>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+
 <p>
   <strong>Name:</strong>
   <%= @user.name %>

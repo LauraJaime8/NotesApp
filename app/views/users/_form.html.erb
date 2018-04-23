@@ -14,30 +14,49 @@
       <h1 style= "color: #ffffff;">Subscription Form!</h1>
     </div>
     <div class="container">
-      <div class="form-group">
+      <div class="row" style= "background: white;">
+        <div class="col-md-5">
+        <div class="label-name">
+          <%= form.label :email %>
+        </div>  </div>
+          <div class="col-md-7">
+        <div class="input-name">
+          <%= form.text_field :email, id: :user_email, :class => "form-control", :placeholder => "Your email", :required => true %>
+        </div>  </div>
+      </div><br>
+      <div class="row" style= "background: white;">
+        <div class="col-md-5">
         <div class="label-name">
           <%= form.label :name %>
         </div>
+        </div>
+        <div class="col-md-7">
         <div class="input-name">
           <%= form.text_field :name, id: :user_name, :class => "form-control", :placeholder => "Your username", :required => true %>
         </div>
-      </div>
-      <div class="form-group">
+        </div>
+      </div><br>
+      <div class="row" style= "background: white;">
+        <div class="col-md-5">
         <div class="label-name">
           <%= form.label :password %>
         </div>
+          </div>
+        <div class="col-md-7">
         <div class="input-name">
           <%= form.text_field :password, id: :user_password, :class => "form-control", :placeholder => "Your password", :required => true %>
-        </div>
-      </div>
-      <div class="form-group">
+        </div>  </div>
+      </div><br>
+      <div class="row" style= "background: white;">
+        <div class="col-md-5">
         <div class="label-name">
           Confirm password
-        </div>
+        </div></div>
+        <div class="col-md-7">
         <div class="input-name">
           <%= form.text_field :password_confirmation , :class => "form-control", :placeholder => "Confirm password", :required => true %>
-        </div>
-      </div>
+        </div></div>
+      </div><br>
         <div class="actions">
         <%= form.submit 'Create user', :class => 'btn btn-primary' %>
       </div>
