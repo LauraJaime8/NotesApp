@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'wdm', '~> 0.1.0'
 gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -29,9 +29,6 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.2.0'
-
-gem 'devise'
-gem 'devise_invitable'
 
 gem 'font-awesome-rails'
 # Use Redis adapter to run Action Cable in production
