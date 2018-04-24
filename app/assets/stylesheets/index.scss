@@ -1,0 +1,45 @@
+.page-container {
+  background: #f1f1f1;
+  height: 100%;
+
+  .sidebar-menu {
+    display: table-cell;
+    vertical-align: top;
+    background: #303641;
+    width: 280px;
+    position: relative;
+    z-index: 100;
+  }
+
+  .logo img {
+    padding: 20px;
+  }
+
+  .menu {
+    background-color: #2b303a;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 6px;
+    padding-left: 40px;
+    &:hover {
+      background-color: rgba(69, 74, 84, 0.4);
+    }
+  }
+
+  a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
