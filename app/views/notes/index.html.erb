@@ -1,37 +1,9 @@
-<% if session[:user] %>
-
-  <%= link_to 'New Note', new_note_path, :class => "btn btn-primary btn-new" %>
-  <% end %>
-<% if session[:user] %>
-  <div class="content-notes">
-    <% if @notes.count > 0 %>
-      <% @notes[0..3].each do |note| %>
-        <div class="note">
-          <div class="title"><%= note.title%></div>
-          <div class="body"><%= note.body %></div>
-          <div class="user-date">
-            <div class="user">
-              <%= note.user.name %>
-            </div>
-            <div class="date">
-              <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
-            </div>
-          </div>
-          <div class="buttons">
-            <div class="list">
-              <div class="option" title="Show"><i class="fas fa-eye"></i><%= link_to 'Show', note %></div>
-              <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
-              <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete%></div>
-              <!--div class="image"><i class="far fa-file-image"></i></div-->
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-    <div class="row-notes content-notes">
-      <% if @notes.count > 3 %>
-        <% @notes[4..7].each do |note| %>
+<div class="page-container">
+  <% if session[:user] %>
+    <%= link_to 'New Note', new_note_path, :class => "btn btn-primary btn-new" %>
+    <div class="content-notes">
+      <% if @notes.count > 0 %>
+        <% @notes[0..3].each do |note| %>
           <div class="note">
             <div class="title"><%= note.title%></div>
             <div class="body"><%= note.body %></div>
@@ -45,9 +17,8 @@
             </div>
             <div class="buttons">
               <div class="list">
-                <div class="option" title="Show"><i class="fas fa-eye"></i><%= link_to 'Show', note %></div>
                 <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
-                <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete %></div>
+                <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete%></div>
                 <!--div class="image"><i class="far fa-file-image"></i></div-->
               </div>
             </div>
@@ -55,30 +26,55 @@
         <% end %>
       <% end %>
     </div>
-    <div class="row-notes content-notes">
-      <% if @notes.count > 7 %>
-        <% @notes[8..11].each do |note| %>
-          <div class="note">
-            <div class="title"><%= note.title%></div>
-            <div class="body"><%= note.body %></div>
-            <div class="user-date">
-              <div class="user">
-                <%= note.user.name %>
+      <div class="row-notes content-notes">
+        <% if @notes.count > 3 %>
+          <% @notes[4..7].each do |note| %>
+            <div class="note">
+              <div class="title"><%= note.title%></div>
+              <div class="body"><%= note.body %></div>
+              <div class="user-date">
+                <div class="user">
+                  <%= note.user.name %>
+                </div>
+                <div class="date">
+                  <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
+                </div>
               </div>
-              <div class="date">
-                <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
+              <div class="buttons">
+                <div class="list">
+                  <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
+                  <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete %></div>
+                  <!--div class="image"><i class="far fa-file-image"></i></div-->
+                </div>
               </div>
             </div>
-            <div class="buttons">
-              <div class="list">
-                <div class="option" title="Show"><i class="fas fa-eye"></i><%= link_to 'Show', note %></div>
-                <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
-                <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete %></div>
-                <!--div class="image"><i class="far fa-file-image"></i></div-->
-              </div>
-            </div>
-          </div>
+          <% end %>
         <% end %>
+      </div>
+      <div class="row-notes content-notes">
+        <% if @notes.count > 7 %>
+          <% @notes[8..11].each do |note| %>
+            <div class="note">
+              <div class="title"><%= note.title%></div>
+              <div class="body"><%= note.body %></div>
+              <div class="user-date">
+                <div class="user">
+                  <%= note.user.name %>
+                </div>
+                <div class="date">
+                  <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="list">
+                  <div class="option" title="Edit"><i class="fas fa-pencil-alt"></i><%= link_to 'Edit', edit_note_path(note) %></div>
+                  <div class="option" title="Delete"><i class="fas fa-trash"></i><%= link_to 'Delete', note, method: :delete %></div>
+                  <!--div class="image"><i class="far fa-file-image"></i></div-->
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
       <% end %>
-    </div>
-    <% end %>
+</div>

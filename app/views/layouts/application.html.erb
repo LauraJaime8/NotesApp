@@ -4,67 +4,37 @@
     <title>Olra Notes</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   </head>
+
   <body>
-  <div class="padre">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">  <%= link_to image_tag("olraN.png", :style => 'width: 200px;'), notes_path%></a>
+<% if session[:user] %>
+  <div class="page-container">
+    <div class="sidebar-menu">
+      <%= link_to image_tag("olraN.png", :style => 'width: 200px;'), notes_path, class: 'logo'%>
+      <div class="menu">
+        <ul>
+          <li>
+            <%= link_to "#{session[:user]}", edit_user_path(session[:user_id]) %>
+            <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
+          </li>
+          <li class="notes">
+            <%= link_to "Notes", notes_path %>
+          </li>
+          <li>
+            <%= link_to "Log out", logout_path %>
+          </li>
+        </ul>
+      </div>
+<% end %>
 
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"></li>
-          </ul>
-          <% if session[:user] %>
-            <div>
-              <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
-                <%= text_field_tag :search, params[:search], :placeholder => "Search for the title of the notes...", :class => "form-control mr-sm-2" %>
-                <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
-              <%end%>
-            </div>
-            <div>
-              <ul id="menu">
-                <li>
-                  <input type="checkbox" name="list" id="nivel1-1">
-                    <label class="complete-user" for="nivel1-1">
-                      <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
-                    </label>
-                    <ul class="interior">
-                      <li>
-                        <input  name="list" id="nivel2-1">
-                          <label for="nivel2-1">
-                            <%= link_to "Profile", "#" %>
-                          </label>
-                        </li>
-                      <li>
-                        <input  name="list" id="nivel2-1">
-                          <label for="nivel2-1">
-                            <%= link_to "Edit User", edit_user_path(session[:user_id]) %>
-                          </label>
-                        </li>
-                        <li>
-                          <input  name="list" id="nivel2-2">
-                          <label for="nivel2-2">
-                            <%= link_to "Log out", logout_path %>
-                          </label>
-                        </li>
-                      </ul>
-                    </li>
-                </ul>
-              </div>
-            <%end%>
-      </nav>
-
+          
       <% flash.each do |name, msg| %>
              <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
            <% end %>
-           <div id="container">
-             <%= yield %>
-           </div>
       <% if !session[:user] %>
-
              <div class="row">
                <div class="col-md-8 col-xs-8">
                  <div class="row">
