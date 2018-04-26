@@ -15,5 +15,10 @@
   <%= @note.user %>
 </p>
 
+<p>
+  <strong>Imagen:</strong>
+  <%= image_tag "/imagePost/#{@note.id}/post/#{@note.imagenPost}", :style => 'width: 100px;' if  @note.imagenPost?%>
+</p>
+
 <%= link_to 'Edit', edit_note_path(@note) %> |
 <%= link_to 'Back', notes_path %>

@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  
+
 <div class="wrapper-form">
   <div class="field form-group">
     <%= form.label :title, class: 'title-form' %>
@@ -21,7 +21,10 @@
     <%= form.label :body, class: 'title-form' %>
     <%= form.text_area :body, id: :note_body, class: 'text-area text-body' %>
   </div>
-
+  <div class="field form-group">
+    <%= form.label :imagenPost, class: 'title-form' %>
+    <%= form.file_field :cover %>
+  </div>
   <div class="actions">
     <%= form.submit :class => "btn btn-primary" %>
   </div>
