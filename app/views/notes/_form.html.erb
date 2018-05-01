@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-<div class="wrapper-form">
+<div class="form-group wrapper-form">
   <div class="field form-group">
-    <%= form.label :title, class: 'title-form' %>
-    <%= form.text_field :title, id: :note_title, class: 'text-area' %>
+    <%= form.label :title, class:'title-form'%>
+    <%= form.text_field :title, id: :note_title, class: 'form-control' %>
   </div>
 
   <div class="field form-group">
     <%= form.label :body, class: 'title-form' %>
-    <%= form.text_area :body, id: :note_body, class: 'text-area text-body' %>
+    <%= form.text_area :body, id: :note_body, class: 'form-control' %>
   </div>
   <div class="field form-group">
     <%= form.label :imagenPost, class: 'title-form' %>
@@ -27,6 +27,7 @@
   </div>
   <div class="actions">
     <%= form.submit :class => "btn btn-primary" %>
+    <%= link_to 'Back', notes_path ,class: 'btn btn-secondary btn-form'%>
   </div>
 <% end %>
 </div>
