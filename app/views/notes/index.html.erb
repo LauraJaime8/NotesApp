@@ -9,7 +9,12 @@
         <div class="note">
           <div class="title"><%= note.title%></div>
           <div class="body"><%= note.body %> <br>
-            <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}", :style => 'width: 100px;'%>
+          <div class="image-note">
+            <% if note.imagenPost %>
+              <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
+            <% end %>
+          </div>
+
           </div>
 
           <div class="user-date">
@@ -37,7 +42,12 @@
           <div class="note">
             <div class="title"><%= note.title%></div>
             <div class="body"><%= note.body %> <br>
-            <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}", :style => 'width: 100px;'%></div>
+              <div class="image-note">
+                <% if note.imagenPost %>
+                  <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
+                <% end %>
+              </div>
+            </div>
             <div class="user-date">
               <div class="user">
                 <%= note.user.name %>

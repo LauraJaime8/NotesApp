@@ -96,7 +96,7 @@
 
 .navbar {
   height: 61px;
-  background-color: #e9ecf5 !important;
+  background-color: #f1f3f6 !important;
 
   .profile {
     padding-right: 30px;
@@ -106,14 +106,26 @@
     position: absolute;
     background-color: #fff;
     padding: 14px;
-    border: 1px solid grey;
-    border-radius: 4px;
+    border: 1px solid #7E9BA0;
+    border-radius: 2px;
+
+    a {
+      text-decoration: none;
+      color: #7E9BA0;
+    }
   }
   .menu-collapse {
-    margin-left: 800px;
+    margin-left: 840px;
   }
   .avatar-user {
     margin-left: 12px;
+    border: 3px solid #fff;
+  }
+
+  .search {
+    margin-top: 7px;
+    margin-bottom: 0;
+    margin-right: 0;
   }
 }
 
@@ -156,6 +168,29 @@
     font-size: 10px;
     margin-bottom: 20px;
   }
+}
 
+// Notes
 
+.content-notes {
+
+  .title {
+    font-size: 14px !important;
+  }
+
+  .body {
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  .image-note {
+    margin-top: 16px;
+    text-align: center;
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+  }
 }
