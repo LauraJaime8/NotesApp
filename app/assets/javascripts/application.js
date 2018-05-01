@@ -29,4 +29,8 @@ $(document).ready(function(e) {
     $('.note').css("background-color", "white");
   });
 
+  $('.avatar-user').click(function() {
+    $('.menu').toggle();
+  })
+
 });

@@ -1,24 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;' if  @user.cover_filename?%>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="user-card">
+  <div class="avatar">
+    <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;' if  @user.cover_filename?%>
+  </div>
+  <div class="name">
+    <%= @user.name %>
+  </div>
+  <div class="email">
+    <%= @user.email %>
+  </div>
+  <div class="actions">
+    <%= link_to 'Edit profile', edit_user_path(@user), class: "btn btn-primary" %>
+    <%= link_to 'Back', users_path, class: "btn btn-secondary" %>
+  </div>
+</div>
