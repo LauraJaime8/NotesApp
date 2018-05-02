@@ -1,6 +1,14 @@
 class User < ApplicationRecord
   has_many :notes
 
+  def self.search(search)
+    if search
+      where (["name LIKE ?", "%#{search}%"])
+    else
+      all
+    end
+  end
+
   attr_accessor :cover
  after_save :save_cover_image, if: :cover
 

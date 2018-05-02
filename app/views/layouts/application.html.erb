@@ -22,8 +22,8 @@
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 menu-collapse">
           <div class="search">
-              <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
-                <%= text_field_tag :search, params[:search], :placeholder => "Search something...", :class => "form-control mr-sm-2" %>
+              <%= form_tag "users#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
+                <%= text_field_tag :search, params[:search], :placeholder => "Search users...", :class => "form-control mr-sm-2" %>
                 <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
               <%end%>
           </div>
