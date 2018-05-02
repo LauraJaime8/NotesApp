@@ -9,20 +9,18 @@
         <div class="note">
           <div class="title"><%= note.title%></div>
           <div class="body"><%= note.body %> <br>
-          <div class="image-note">
-            <% if note.imagenPost %>
-              <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
-            <% end %>
-          </div>
-
-          </div>
-
-          <div class="user-date">
-            <div class="user">
-              <%= note.user.name %>
+            <div class="image-note">
+              <% if note.imagenPost %>
+                <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
+              <% end %>
+              <div class="user">
+                <%= link_to note.user.name, user_path(note.user.id) %>
+              </div>
             </div>
-            <div class="date">
-              <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
+            <div class="user-date">
+              <div class="date">
+                <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
+              </div>
             </div>
           </div>
           <div class="buttons">
@@ -46,12 +44,12 @@
                 <% if note.imagenPost %>
                   <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
                 <% end %>
+                <div class="user">
+                  <%= link_to note.user.name, user_path(note.user.id) %>
+                </div>
               </div>
             </div>
             <div class="user-date">
-              <div class="user">
-                <%= note.user.name %>
-              </div>
               <div class="date">
                 <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
               </div>
@@ -72,11 +70,17 @@
         <% @notes[8..11].each do |note| %>
           <div class="note">
             <div class="title"><%= note.title%></div>
-            <div class="body"><%= note.body %></div>
-            <div class="user-date">
-              <div class="user">
-                <%= note.user.name %>
+            <div class="body"><%= note.body %>
+              <div class="image-note">
+                <% if note.imagenPost %>
+                  <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
+                <% end %>
+                <div class="user">
+                  <%= link_to note.user.name, user_path(note.user.id) %>
+                </div>
               </div>
+            </div>
+            <div class="user-date">
               <div class="date">
                 <%= note.created_at.strftime("%b %d, %Y - %H:%M") %>
               </div>

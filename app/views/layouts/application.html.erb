@@ -18,46 +18,33 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <% if session[:user] %>
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 menu-collapse">
           <div class="search">
-            <% if session[:user] %>
               <%= form_tag "notes#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
                 <%= text_field_tag :search, params[:search], :placeholder => "Search something...", :class => "form-control mr-sm-2" %>
                 <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
               <%end%>
-            <%end%>
           </div>
           <li class="nav-item">
             <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
             <div class="menu">
-              <div><%= link_to "Profile", user_path(session[:user_id] )%></div>
+              <div><%= link_to "Profile",  user_path(session[:user_id] )%></div>
               <div><%= link_to "Edit User", edit_user_path(session[:user_id]) %></div>
               <div><%= link_to "Log out", logout_path %></div>
             </div>
           </li>
         </ul>
       </div>
+      <%end%>
     </nav>
-
-
-
-
-
-
-
-
       <% flash.each do |name, msg| %>
              <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
            <% end %>
            <div id="container">
              <%= yield %>
            </div>
-
-
-
-
-
 
       <% if !session[:user] %>
 
