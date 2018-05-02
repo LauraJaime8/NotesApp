@@ -191,6 +191,26 @@
       height: auto;
       border-radius: 8px;
     }
-
   }
+}
+
+// Edit user
+
+.actions {
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+}
+
+.delete {
+  margin-top: 20px;
+}
+
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 3px solid #eee;
+  margin: auto;
 }

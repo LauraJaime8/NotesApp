@@ -28,7 +28,7 @@
               <%end%>
           </div>
           <li class="nav-item">
-            <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
+            <%= image_tag "/imageAvatar/#{session[:user_id]}/avatar/#{session[:user_cover]}", :id => "avatar-user", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
             <div class="menu">
               <div><%= link_to "Profile",  user_path(session[:user_id] )%></div>
               <div><%= link_to "Edit User", edit_user_path(session[:user_id]) %></div>

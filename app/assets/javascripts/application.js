@@ -16,21 +16,7 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(e) {
-
-  $('.color').click(function() {
-    $('.colors').toggle();
-  });
-
-  $('.red').click(function() {
-    $('.note').css("background-color", "red");
-  });
-
-  $('.white').click(function() {
-    $('.note').css("background-color", "white");
-  });
-
   $('.avatar-user').click(function() {
     $('.menu').toggle();
-  })
-
+  });
 });

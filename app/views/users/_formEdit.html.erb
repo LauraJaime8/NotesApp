@@ -11,6 +11,9 @@
   <% end %>
   <div class="sign-up">
     <div class="container">
+      <div class="avatar">
+        <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;' if  @user.cover_filename?%>
+      </div>
       <div class="form-group">
         <div class="label-name">
           <%= form.label :email %>
@@ -36,6 +39,7 @@
         </div>
       </div>
       <div class="label-name">
+        <p>Change your avatar</p>
         <%= form.label :avatar %>
       </div>
       <div class="input-name search">
@@ -44,11 +48,16 @@
       <div >
         <div class="actions">
         <%= form.submit 'Save changes', :class => 'btn btn-primary' %>
-
         <%= link_to 'Back', notes_path, :class => 'btn btn-secondary' %>
       </div>
+
       </div>
+      <div class="delete">
+          <%= link_to 'Delete account', @user, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+      </div>
+
     </div>
+
 
   </div>
 
