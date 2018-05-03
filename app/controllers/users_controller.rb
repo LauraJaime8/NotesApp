@@ -2,31 +2,22 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy,
                                   :following, :followers]
 
-  # GET /users
-  # GET /users.json
   def index
     @users = User.all
     @users = User.search(params[:search])
   end
 
-
-  # GET /users/1
-  # GET /users/1.json
   def show
      @user = User.find(params[:id])
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
     if @user.save
@@ -50,8 +41,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     session[:user] = nil
