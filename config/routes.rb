@@ -11,12 +11,10 @@ Rails.application.routes.draw do
   get "signup" => "users#new", :as => "signup"
 
   resources :notes
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
+  resources :users
   resources :session
+
+  resources :friendships
 
   root :to => "notes#index"
 end
