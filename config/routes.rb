@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     end
   end
   resources :session
-  resources :relationships, only: [:create, :destroy]
 
   root :to => "notes#index"
 end
