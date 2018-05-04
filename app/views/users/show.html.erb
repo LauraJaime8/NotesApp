@@ -2,7 +2,11 @@
 
 <div class="user-card">
   <div class="avatar">
-    <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;' if  @user.cover_filename?%>
+    <% if  @user.cover_filename%>
+      <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;'%>
+    <% else %>
+      <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
+    <% end %>
   </div>
   <div class="name">
     <%= @user.name %>

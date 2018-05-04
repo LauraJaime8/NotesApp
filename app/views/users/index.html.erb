@@ -16,7 +16,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag "/imageAvatar/#{user.id}/avatar/#{user.cover_filename}", :style => 'width: 40px;'  if  user.cover_filename?%></td>
+        <td>
+          <%if user.cover_filename%>
+            <%= image_tag "/imageAvatar/#{user.id}/avatar/#{user.cover_filename}", :style => 'width: 40px;' %>
+          <%else %>
+            <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 40px;' %>
+          <%end %>
+        </td>
         <td><%= user.name %></td>
         <!--td><%= user.password %></td-->
         <td><%= user.email %></td>
