@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
 
   def create
-    @friendship = current_user.friendships.build
+    @friendship = Friendship.new(friendship_params)
     if @friendship.save
       flash[:notice] = "Added friend."
       redirect_to root_url
@@ -18,7 +18,8 @@ class FriendshipsController < ApplicationController
     redirect_to root_url
   end
 
-  def friendship_params
-    params.require(:friendship).permit(:friend_id, :user_id)
-  end
+  private
+    def friendship_params
+      params.require(:friendship).permit(:friend_id, :user_id).permit(:type)
+    end
 end
