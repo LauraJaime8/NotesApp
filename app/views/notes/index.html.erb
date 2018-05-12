@@ -1,5 +1,6 @@
 <% if session[:user] %>
   <%= link_to 'New Note', new_note_path, :class => "btn btn-primary btn-new" %>
+  <%= link_to 'New collection', new_collection_path, :class => "btn btn-primary btn-new" %>
 
   <div class="content-notes">
       <% @notes.each do |note| %>

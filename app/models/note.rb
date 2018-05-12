@@ -1,6 +1,9 @@
 class Note < ApplicationRecord
   belongs_to :user
+  belongs_to :collection
+
   attr_accessor :cover
+  
   def self.search(search)
     if search
       where (["title LIKE ?", "%#{search}%"])

@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   resources :friendships
 
+  resources :collections
+
   root :to => "notes#index"
 end
