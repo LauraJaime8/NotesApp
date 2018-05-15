@@ -18,10 +18,7 @@ class NotesController < ApplicationController
     if !session[:user]
       redirect_to notes_path, :alert => "Debes estar logueado"
     else
-      =begin
-        @note = Note.new
-      =end
-      @note = @collection.notes.create()
+      @note = Note.new
     end
   end
 

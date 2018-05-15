@@ -14,9 +14,5 @@ Rails.application.routes.draw do
   resources :users
   resources :session
 
-  resources :friendships
-
-  resources :collections
-
   root :to => "notes#index"
 end

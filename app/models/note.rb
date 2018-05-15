@@ -1,9 +1,10 @@
 class Note < ApplicationRecord
   belongs_to :user
-  belongs_to :collection
 
-  attr_accessor :cover
+  validates :body, presence: true
   
+  attr_accessor :cover
+
   def self.search(search)
     if search
       where (["title LIKE ?", "%#{search}%"])
@@ -27,4 +28,6 @@ class Note < ApplicationRecord
     self.cover = nil
     update imagenPost: filename
   end
+
+
 end

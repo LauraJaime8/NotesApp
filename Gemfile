@@ -32,7 +32,6 @@ gem 'paperclip', '~> 5.2.0'
 
 gem 'font-awesome-rails'
 
-gem 'rspec'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -44,6 +43,11 @@ gem 'rspec'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7'
+  gem 'factory_girl_rails', '~> 4.9'
+  gem 'faker', '~> 1.8', '>= 1.8.7'
+  gem 'database_cleaner', '~> 1.7'
+  gem 'rails-controller-testing'
 end
 
 group :development do
