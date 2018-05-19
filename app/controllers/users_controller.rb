@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy,
-                                  :following, :followers]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :createAdmin]
 
   def index
     @users = User.all
@@ -51,14 +50,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def createAdmin
-    @user.admin = true
+  def make_admin
+    @user = User.find(params[:id])
+    @user.update( :admin => true )
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'User was successfully made admin.' }
+      format.html { redirect_to root_path, notice: 'New Admin' }
       format.json { head :no_content }
     end
- end
-
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -70,4 +69,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :password, :cover, :password_confirmation, :email)
     end
+
+
 end
