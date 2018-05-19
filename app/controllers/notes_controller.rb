@@ -16,7 +16,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     if !session[:user]
-      redirect_to notes_path, :alert => "Debes estar logueado"
+      redirect_to notes_path, :alert => "You must be logged"
     else
       @note = Note.new
     end
@@ -26,7 +26,7 @@ class NotesController < ApplicationController
   def edit
     @note = Note.find(params[:id])
     if @note.user.name != session[:user]
-      redirect_to notes_path, :alert => "no puedes editar otra nota que no es tuya"
+      redirect_to notes_path, :alert => "You can't edit a note that is not yours :("
     else
       @note = Note.find(params[:id])
     end
@@ -67,7 +67,7 @@ class NotesController < ApplicationController
   # DELETE /notes/1.json
   def destroy
     if @note.user.name != session[:user]
-      redirect_to notes_path, :alert =>"No puedes borrar una nota que no es tuya"
+      redirect_to notes_path, :alert =>"You can't delete a note that is not yours :("
     else
       @note.destroy
       respond_to do |format|

@@ -2,14 +2,14 @@
 
 <h1>Users</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Avatar</th>
-      <th>Name</th>
+      <th scope="col">Avatar</th>
+      <th scope="col">Name</th>
       <!--th>Password</th-->
-      <th>Email</th>
-      <th colspan="1"></th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
 
@@ -26,18 +26,19 @@
         <td><%= user.name %></td>
         <!--td><%= user.password %></td-->
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
         <td>
+          <%= link_to 'Show', user, class: 'btn btn-primary' %>
+
           <% if current_user.admin? %>
-            <%= link_to "Edit", edit_user_path(user) %>
-            <%= link_to "Delete", user, method: :delete, data: { confirm: "You sure?" } %>
+            <%= link_to "Edit", edit_user_path(user), class: 'btn btn-primary' %>
+            <%= link_to "Delete", user, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
             <% if !user.admin? %>
-                <%= link_to "Admin", user, method: :createAdmin, data: { confirm: "You sure?" }%>
+                <%= link_to "Admin", user, method: :createAdmin, data: { confirm: "You sure?" }, class: "btn btn-success" %>
             <% end %>
           <% end %>
         </td>
       </tr>
     <% end %>
-    <td><%= link_to 'Back', root_path %></td>
+    <td><%= link_to 'Back', root_path, class: 'btn btn-secondary'%></td>
   </tbody>
 </table>
