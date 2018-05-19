@@ -16,7 +16,6 @@
     <%= form.label :title, class:'title-form'%>
     <%= form.text_field :title, id: :note_title, class: 'form-control' %>
   </div>
-
   <div class="field form-group">
     <%= form.label :body, class: 'title-form' %>
     <%= form.text_area :body, id: :note_body, class: 'form-control' %>
@@ -24,6 +23,12 @@
   <div class="field form-group">
     <%= form.label :imagenPost, class: 'title-form' %>
     <%= form.file_field :cover %>
+  </div>
+  <div class="hints">
+    <p class="font-italic">To add a note to a collection, in the body of the note you must add '#name of the collection' and that collection is automatically created.</p>
+    <p class="font-italic"> For example: </p>
+    <p class="font-weight-bold">#shopping </p>
+    <p class="font-italic"> If I wanted to add the note to the <b>shopping</b> collection</p>
   </div>
   <div class="actions">
     <%= form.submit :class => "btn btn-primary" %>

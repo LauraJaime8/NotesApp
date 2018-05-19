@@ -12,7 +12,7 @@
                 <%= image_tag "/imagePost/#{note.id}/post/#{note.imagenPost}" %>
               <% end %>
               <div class="user">
-                <%= link_to note.user.name, user_path(note.user.id), class: 'user-link' %>
+                <%= link_to note.user.name, user_path(note.user.id) %>
               </div>
             </div>
             <div class="user-date">
