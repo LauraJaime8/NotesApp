@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   resources :users
   resources :session
 
+  resource :users do
+    collection do
+      get "createAdmin"
+    end
+  end
+
   root :to => "notes#index"
 end

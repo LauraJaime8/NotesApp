@@ -15,8 +15,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function(e) {
-  $('.avatar-user').click(function() {
-    $('.menu').toggle();
-  });
+
+$(document).ready ( function () {
+    $(document).on ("click", ".avatar-user", function () {
+        $('.menu').toggle();
+    });
 });
