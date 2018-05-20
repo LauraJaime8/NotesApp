@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "signup" => "users#new", :as => "signup"
 
   resources :notes
+  get '/notes/collection/:name', to: 'notes#collections'
+  
   resources :users
   resources :session
 

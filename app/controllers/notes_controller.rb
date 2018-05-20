@@ -13,6 +13,11 @@ class NotesController < ApplicationController
   def show
   end
 
+  def collections
+    collection = Collection.find_by(name: params[:name])
+    @notes = collection.notes
+  end
+
   # GET /notes/new
   def new
     if !session[:user]

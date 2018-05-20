@@ -210,3 +210,22 @@
   border: 3px solid #eee;
   margin: auto;
 }
+
+// Form notes
+.hints {
+  p {
+    font-size: 12px;
+  }
+}
+
+.note {
+  a {
+    text-decoration: none;
+    color: #880000;
+  }
+}
+
+.user-link {
+  color: #00283f !important;
+  font-size: 12px;
+}
