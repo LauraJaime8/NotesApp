@@ -34,6 +34,8 @@
               <%= image_tag "/imageDefault/defaultAvatar.jpg", :id => "avatar-user", :class => "avatar-user", :style => 'width: 50px; border-radius: 50%; height: 50px;' %>
             <% end %>
             <div class="menu">
+              <div><%=session[:user]%></div>
+              <div role="separator" class="divider"></div>
               <div><%= link_to "Profile",  user_path(session[:user_id] )%></div>
               <div><%= link_to "Edit User", edit_user_path(session[:user_id]) %></div>
               <% if current_user.admin? %>

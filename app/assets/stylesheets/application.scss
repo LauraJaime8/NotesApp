@@ -113,9 +113,15 @@ body, html {
       text-decoration: none;
       color: #7E9BA0;
     }
+    .divider {
+    height: 1px;
+    margin: 2px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
   }
   .menu-collapse {
-    margin-left: 422px;
+    margin-left: 60%;
   }
   .avatar-user {
     margin-left: 12px;

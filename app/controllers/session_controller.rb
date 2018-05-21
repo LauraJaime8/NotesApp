@@ -11,6 +11,7 @@ class SessionController < ApplicationController
         session[:user] = @user.name
         session[:user_id] = @user.id
         session[:user_cover] = @user.cover_filename
+        session[:user_email] = @user.email
         session[:user_profile] = @user
         redirect_to root_url
       else
