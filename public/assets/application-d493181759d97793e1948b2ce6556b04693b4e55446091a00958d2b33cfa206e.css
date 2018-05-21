@@ -13944,10 +13944,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* line 50, /Users/laurajaimevillamayor/Documents/NotesApp/app/assets/stylesheets/application.scss */
 .row {
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  margin-left: 0px;
   height: 100%;
   background: #007bff;
 }
