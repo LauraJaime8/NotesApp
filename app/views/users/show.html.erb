@@ -1,21 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<div class="user-card">
-  <div class="avatar">
-    <% if  @user.cover_filename%>
-      <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;'%>
-    <% else %>
-      <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
-    <% end %>
+<div class="user-tab">
+  <div class="user-card">
+    <div class="avatar">
+      <% if  @user.cover_filename%>
+        <%= image_tag "/imageAvatar/#{@user.id}/avatar/#{@user.cover_filename}", :style => 'width: 100px;'%>
+      <% else %>
+        <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
+      <% end %>
+    </div>
+    <div class="name">
+      <%= @user.name %>
+    </div>
+    <div class="email">
+      <%= @user.email %>
+    </div>
+    <div class="actions">
+      <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post , class: "btn btn-primary"%>
+      <%= link_to 'Back', notes_path, class: "btn btn-secondary" %>
+    </div>
   </div>
-  <div class="name">
-    <%= @user.name %>
+
+  <div class="user-card">
+    <div class="friends">
+      <h3 class="name">My friends</h3>
+      <ul>
+        <% for friendship in @user.friendships %>
+          <li>
+            <div class="avatar-xs">
+              <% if friendship.friend.cover_filename %>
+                <%= image_tag "/imageAvatar/#{friendship.friend.id}/avatar/#{friendship.friend.cover_filename}", :style => 'width: 100px;'%>
+              <% else %>
+                <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
+              <% end %>
+            </div>
+            <p class="friend-name"><%= friendship.friend.name %></p>
+            <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
+          </li>
+        <% end %>
+      </ul>
+
   </div>
-  <div class="email">
-    <%= @user.email %>
-  </div>
-  <div class="actions">
-    <%= link_to 'Back', notes_path, class: "btn btn-secondary" %>
-  </div>
-  <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
 </div>
