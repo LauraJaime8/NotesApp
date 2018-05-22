@@ -17,4 +17,5 @@
   <div class="actions">
     <%= link_to 'Back', notes_path, class: "btn btn-secondary" %>
   </div>
+  <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
 </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   get 'session/new'
 
   get 'session/create'
