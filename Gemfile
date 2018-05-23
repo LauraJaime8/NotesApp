@@ -48,6 +48,7 @@ group :development, :test do
   gem 'faker', '~> 1.8', '>= 1.8.7'
   gem 'database_cleaner', '~> 1.7'
   gem 'rails-controller-testing'
+  gem 'railroady'
 end
 
 group :development do
