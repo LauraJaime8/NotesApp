@@ -42,17 +42,19 @@
       <h3 class="name">My friends</h3>
       <ul>
         <% for friendship in @user.friendships %>
-          <li>
-            <div class="avatar-xs">
-              <% if friendship.friend.cover_filename %>
-                <%= image_tag "/imageAvatar/#{friendship.friend.id}/avatar/#{friendship.friend.cover_filename}", :style => 'width: 100px;'%>
-              <% else %>
-                <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
-              <% end %>
-            </div>
-            <p class="friend-name"><%= link_to friendship.friend.name, friendship.friend %></p>
-            <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
-          </li>
+          <% if !current_user.friendships.find_by_friend_id(@user.id)%>
+            <li>
+              <div class="avatar-xs">
+                <% if friendship.friend.cover_filename %>
+                  <%= image_tag "/imageAvatar/#{friendship.friend.id}/avatar/#{friendship.friend.cover_filename}", :style => 'width: 100px;'%>
+                <% else %>
+                  <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
+                <% end %>
+              </div>
+              <p class="friend-name"><%= link_to friendship.friend.name, friendship.friend %></p>
+                <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
+            </li>
+          <% end %>
         <% end %>
         <% if @user.id != session[:user_id]%>
           <% for user in @user.inverse_friends %>
