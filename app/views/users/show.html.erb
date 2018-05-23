@@ -17,12 +17,23 @@
     </div>
     <div class="actions">
       <% if @user.id != session[:user_id]%>
-        <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post , class: "btn btn-primary"%>
+
+          <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post , class: "btn btn-primary"%>
+
       <% end %>
       <%= link_to 'Back', notes_path, class: "btn btn-secondary" %>
     </div>
   </div>
 
+  <div class="user-tab">
+    <div class="user-card">
+      <div class="friends">
+        <h3 class="name">My friend requests</h3>
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="user-card">
     <div class="friends">
       <h3 class="name">My friends</h3>
@@ -39,6 +50,20 @@
             <p class="friend-name"><%= link_to friendship.friend.name, friendship.friend %></p>
             <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
           </li>
+        <% end %>
+        <% if @user.id != session[:user_id]%>
+          <% for user in @user.inverse_friends %>
+            <li>
+              <div class="avatar-xs">
+                <% if user.cover_filename %>
+                  <%= image_tag "/imageAvatar/#{user.id}/avatar/#{user.cover_filename}", :style => 'width: 100px;'%>
+                <% else %>
+                  <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
+                <% end %>
+              </div>
+              <p class="friend-name"><%= link_to user.name, user %></p>
+            </li>
+          <% end %>
         <% end %>
       </ul>
 
