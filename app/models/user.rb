@@ -5,6 +5,10 @@ class User < ApplicationRecord
   has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id",  :dependent => :destroy
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user, :dependent => :destroy
 
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+
+
   def self.search(search)
     if search
       where (["name LIKE ?", "%#{search}%"])
