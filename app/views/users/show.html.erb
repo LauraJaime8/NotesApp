@@ -42,7 +42,6 @@
       <h3 class="name">My friends</h3>
       <ul>
         <% for friendship in @user.friendships %>
-          <% if !current_user.friendships.find_by_friend_id(@user.id)%>
             <li>
               <div class="avatar-xs">
                 <% if friendship.friend.cover_filename %>
@@ -52,11 +51,11 @@
                 <% end %>
               </div>
               <p class="friend-name"><%= link_to friendship.friend.name, friendship.friend %></p>
+              <% if @user.id == session[:user_id]%>
                 <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
+              <% end %>
             </li>
-          <% end %>
         <% end %>
-        <% if @user.id != session[:user_id]%>
           <% for user in @user.inverse_friends %>
             <li>
               <div class="avatar-xs">
@@ -67,10 +66,11 @@
                 <% end %>
               </div>
               <p class="friend-name"><%= link_to user.name, user %></p>
+              <% if @user.id == session[:user_id]%>
+                <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
+              <% end %>
             </li>
-          <% end %>
         <% end %>
       </ul>
-
   </div>
 </div>
