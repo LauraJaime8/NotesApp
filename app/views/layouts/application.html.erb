@@ -22,10 +22,10 @@
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 menu-collapse">
           <div class="search">
-              <%= form_tag "users#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
-                <%= text_field_tag :search, params[:search], :placeholder => "Search users...", :class => "form-control mr-sm-2" %>
-                <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
-              <%end%>
+            <%= form_tag "users#index", :class => "form-inline my-2 my-lg-0 search" , method: :get do %>
+              <%= text_field_tag :search, params[:search], :placeholder => "Search users...", :class => "form-control mr-sm-2" %>
+              <%= button_tag(type: "submit", :title => "Search", class: "btn btn-outline-success my-2 my-sm-0 btn-search") do %><i class="fa fa-search" aria-hidden="true"></i><% end %>
+            <%end%>
           </div>
           <li class="nav-item">
             <% if session[:user_cover]%>
@@ -48,46 +48,45 @@
       </div>
     </nav>
   <%end%>
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
-      <% end %>
-      <div id="container">
-        <%= yield %>
-      </div>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'alert alert-danger alert-dismissible fade show' %>
+  <% end %>
+  <div id="container">
+    <%= yield %>
+  </div>
 
-
-      <% if !session[:user] && current_page?(root_path) %>
+  <% if !session[:user] && current_page?(root_path) %>
+    <div class="row">
+      <div class="col-md-8 col-xs-8">
         <div class="row">
-          <div class="col-md-8 col-xs-8">
-            <div class="row">
-              <div class="col-md-8 ">
-                <h2 style="color: white;">Welcome to Olra Notes</h2>
-                <br>
-                <p style="color: white;">Organize your personal information through this application of notes.</p>
-                <br>
-                <div>
-                  <p style="color: white;"><i class="fa fa-search" aria-hidden="true"></i>  Share your friends</p>
-                  <p style="color: white;"><i class="fa fa-hand-point-up" aria-hidden="true"></i>  Find what you need quickly</p>
-                  <p style="color: white;"><i class="fa fa-save" aria-hidden="true"></i>  Save your ideas</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <%= image_tag("esi.png", :style => 'width: 200px;')%>
-              </div>
+          <div class="col-md-8 ">
+            <h2 style="color: white;">Welcome to Olra Notes</h2>
+            <br>
+            <p style="color: white;">Organize your personal information through this application of notes.</p>
+            <br>
+            <div>
+              <p style="color: white;"><i class="fa fa-search" aria-hidden="true"></i>  Share your friends</p>
+              <p style="color: white;"><i class="fa fa-hand-point-up" aria-hidden="true"></i>  Find what you need quickly</p>
+              <p style="color: white;"><i class="fa fa-save" aria-hidden="true"></i>  Save your ideas</p>
             </div>
           </div>
-          <div class="col-md-4 col-xs-8">
-           <div class="row">
-             <div class="col-md-12 col-xs-8">
-               <h3 style="color: white;">Join Orla Notes Today</h3>
-                <br>
-                <%= link_to "Sign up", signup_path, :class => "form-control btn btn-verde " %>
-                <br>  <br>
-                <%= link_to "Log in", login_path, :class => "form-control btn btn-amarillo" %>
-              </div>
-                 </div>
-               </div>
-             </div>
-      <% end %>
+          <div class="col-md-4">
+            <%= image_tag("esi.png", :style => 'width: 200px;')%>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-8">
+        <div class="row">
+          <div class="col-md-12 col-xs-8">
+            <h3 style="color: white;">Join Orla Notes Today</h3>
+            <br>
+            <%= link_to "Sign up", signup_path, :class => "form-control btn btn-verde " %>
+            <br>  <br>
+            <%= link_to "Log in", login_path, :class => "form-control btn btn-amarillo" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
   </body>
 </html>

@@ -49,20 +49,15 @@
       <div class="input-name search">
         <%= form.file_field :cover %>
       </div>
-      <div >
+      <div>
         <div class="actions">
-        <%= form.submit 'Save changes', :class => 'btn btn-primary' %>
-        <%= link_to 'Back', notes_path, :class => 'btn btn-secondary' %>
-      </div>
-
+          <%= form.submit 'Save changes', :class => 'btn btn-primary' %>
+          <%= link_to 'Back', notes_path, :class => 'btn btn-secondary' %>
+        </div>
       </div>
       <div class="delete">
-          <%= link_to 'Delete account', @user, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        <%= link_to 'Delete account', @user, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
       </div>
-
     </div>
-
-
   </div>
-
 <% end %>

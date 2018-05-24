@@ -1,15 +1,11 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
-  # GET /notes
-  # GET /notes.json
   def index
     @notes = Note.all
     @notes = Note.search(params[:search])
   end
 
-  # GET /notes/1
-  # GET /notes/1.json
   def show
   end
 
@@ -18,7 +14,6 @@ class NotesController < ApplicationController
     @notes = collection.notes
   end
 
-  # GET /notes/new
   def new
     if !session[:user]
       redirect_to notes_path, :alert => "You must be logged"
@@ -27,7 +22,7 @@ class NotesController < ApplicationController
     end
   end
 
-  # GET /notes/1/edit
+
   def edit
     @note = Note.find(params[:id])
     if @note.user.name != session[:user]
@@ -37,12 +32,9 @@ class NotesController < ApplicationController
     end
   end
 
-  # POST /notes
-  # POST /notes.json
   def create
     @note = Note.new(note_params)
     @note.user = User.find_by name: session[:user]
-
     respond_to do |format|
       if @note.save
         format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
@@ -54,8 +46,6 @@ class NotesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /notes/1
-  # PATCH/PUT /notes/1.json
   def update
     respond_to do |format|
       if @note.update(note_params)
@@ -68,8 +58,6 @@ class NotesController < ApplicationController
     end
   end
 
-  # DELETE /notes/1
-  # DELETE /notes/1.json
   def destroy
     if @note.user.name != session[:user]
       redirect_to notes_path, :alert =>"You can't delete a note that is not yours :("
@@ -83,12 +71,10 @@ class NotesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_note
       @note = Note.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
       params.require(:note).permit(:title, :body, :user_id, :cover)
     end

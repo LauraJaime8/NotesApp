@@ -2,7 +2,7 @@
   <%= link_to 'New Note', new_note_path, :class => "btn btn-primary btn-new" %>
 
   <div class="content-notes">
-      <% @notes.each do |note| %>
+    <% @notes.each do |note| %>
       <% if note.user_id == current_user.id || current_user.admin? %>
         <div class="note">
           <div class="title"><%= note.title%></div>
