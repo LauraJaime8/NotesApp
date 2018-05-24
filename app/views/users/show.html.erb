@@ -20,7 +20,7 @@
         <% if current_user.friendships.find_by_friend_id(@user.id)%>
           <%= link_to "Remove Friend", friendship_path(current_user.friendships.find_by_friend_id(@user.id)), :method => :delete, class: 'btn btn-danger' %>
         <%else%>
-          <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post , class: "btn btn-primary"%>
+          <%=link_to "Add Friend", friend_requests_path(:friend_id => @user.id), :method => :post , class: "btn btn-primary"%>
         <% end %>
       <% end %>
       <%= link_to 'Back', notes_path, class: "btn btn-secondary" %>
@@ -32,6 +32,22 @@
       <div class="friends">
         <h3 class="name">My friend requests</h3>
         <ul>
+          <% for friend_request in @user.inverse_pending_friends %>
+              <li>
+                <% if !current_user.friendships.find_by_friend_id(friend_request.id) || current_user.friend_requests.find_by_friend_id(friend_request.id) %>
+                  <div class="avatar-xs">
+                    <% if friend_request.cover_filename %>
+                      <%= image_tag "/imageAvatar/#{friend_request.id}/avatar/#{friend_request.cover_filename}", :style => 'width: 100px;'%>
+                    <% else %>
+                      <%= image_tag "/imageDefault/defaultAvatar.jpg", :style => 'width: 100px;' %>
+                    <% end %>
+                  </div>
+                  <p class="friend-name"><%= link_to friend_request.name, friend_request  %></p>
+                    <%= link_to "Acept", friendships_path(:friend_id => friend_request.id), :method => :post , class: 'btn btn-primary' %>
+                    <%= link_to "Ignore", friend_request, :method => :delete, class: 'btn btn-danger' %>
+                <% end %>
+              </li>
+          <% end %>
         </ul>
       </div>
     </div>

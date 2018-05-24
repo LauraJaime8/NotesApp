@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :friend_request do
-    user nil
-    friend nil
+    user_id 1
+    friend_id 1
   end
 end

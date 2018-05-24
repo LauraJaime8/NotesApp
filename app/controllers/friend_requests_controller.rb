@@ -1,30 +1,20 @@
 class FriendRequestsController < ApplicationController
-  before_action :set_friend_request, except: [:index, :create]
-
-  def index
-    @incoming = FriendRequest.where(friend: current_user)
-    @outgoing = current_user.friend_requests
-  end
 
   def create
-    friend = User.find(params[:friend_id])
-    @friend_request = current_user.friend_requests.new(friend: friend)
-
+    @friend_request = current_user.friend_requests.build(:friend_id => params[:friend_id])
     if @friend_request.save
-      render :show, status: :created, location: @friend_request
+      flash[:notice] = "Request send."
+      redirect_to root_url
     else
-      render json: @friend_request.errors, status: :unprocessable_entity
+      flash[:error] = "Unable to request friend."
+      redirect_to root_url
     end
   end
 
   def destroy
+    @friend_request = current_user.friend_requests.find(params[:id])
     @friend_request.destroy
-    head :no_content
-  end
-
-  private
-
-  def set_friend_request
-    @friend_request = FriendRequest.find(params[:id])
+    flash[:notice] = "Removed request."
+    redirect_to root_url
   end
 end
