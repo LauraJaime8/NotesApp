@@ -34,7 +34,7 @@
         <ul>
           <% for friend_request in @user.inverse_pending_friends %>
               <li>
-                <% if !current_user.friendships.find_by_friend_id(friend_request.id)%>
+                <% if !current_user.friendships.find_by_friend_id(friend_request.id) || current_user.friend_requests.find_by_friend_id(friend_request.id) %>
                   <div class="avatar-xs">
                     <% if friend_request.cover_filename %>
                       <%= image_tag "/imageAvatar/#{friend_request.id}/avatar/#{friend_request.cover_filename}", :style => 'width: 100px;'%>
