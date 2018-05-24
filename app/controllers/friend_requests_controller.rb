@@ -12,8 +12,8 @@ class FriendRequestsController < ApplicationController
   end
 
   def destroy
-    @friend_request = current_user.friend_requests.find(params[:id])
-    @friend_request.destroy
+    @friend_request = FriendRequest.all.where(:friend_id => params[:friend_id], :user_id => params[:user_id])
+    @friend_request.destroy_all
     flash[:notice] = "Removed request."
     redirect_to root_url
   end
