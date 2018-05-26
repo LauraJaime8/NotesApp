@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :shares
   resources :friend_requests
   resources :friendships
   get 'session/new'
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :notes
   get '/notes/collection/:name', to: 'notes#collections'
-  
+
   resources :users
   resources :session
 

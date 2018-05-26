@@ -24,6 +24,7 @@
           <div class="buttons">
             <div class="list">
               <div class="option" title="Edit"><%= link_to 'Edit', edit_note_path(note) %></div>
+              <div class="option" title="Share"><%= link_to 'Share', share_path(note) %></div>
               <div class="option" title="Delete"><%= link_to 'Delete', note, method: :delete%></div>
             </div>
           </div>
