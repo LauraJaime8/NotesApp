@@ -27,7 +27,6 @@
     </div>
   </div>
 <% if @user.id == session[:user_id]%>
-  <div class="user-tab">
     <div class="user-card">
       <div class="friends">
         <h3 class="name">My friend requests</h3>
@@ -51,7 +50,6 @@
         </ul>
       </div>
     </div>
-  </div>
 <% end %>
   <div class="user-card">
     <div class="friends">
@@ -83,7 +81,7 @@
               </div>
               <p class="friend-name"><%= link_to user.name, user %></p>
               <% if @user.id == session[:user_id]%>
-                <%= link_to "Delete friend", friendship, :method => :delete, class: 'btn btn-danger' %>
+                <%= link_to "Delete friend", friendship_path(:id => friendship.id, :friend_id => friendship.friend_id), :method => :delete, class: 'btn btn-danger' %>
               <% end %>
             </li>
         <% end %>

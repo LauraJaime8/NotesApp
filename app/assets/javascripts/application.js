@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
 
 $(document).ready ( function () {
     $(document).on ("click", ".avatar-user", function () {
